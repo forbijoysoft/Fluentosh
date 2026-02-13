@@ -1,0 +1,22 @@
+
+
+body {
+        font-family: "Hind Siliguri", sans-serif;
+        scroll-behavior: smooth;
+      }
+.gradient-bg {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}
+
+/* হেডলাইনের জন্য */
+h1,
+h2,
+h3 {
+  font-family: "Baloo Da 2", cursive;
+  font-weight: 700; /* ইমেজের মতো বোল্ড লুক পেতে */
+}
+
+/* সাধারণ প্যারাগ্রাফের জন্য */
+p {
+  font-family: "Hind Siliguri", sans-serif;
+}
