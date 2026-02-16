@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Successful | Fluentosh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 flex items-center justify-center min-h-screen p-6">
+    <div
+      class="max-w-md w-full bg-white rounded-3xl shadow-2xl p-10 text-center border border-slate-100"
+    >
+      <div
+        class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce-in"
+      >
+        <svg
+          class="w-12 h-12"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+            d="M5 13l4 4L19 7"
+          ></path>
+        </svg>
+      </div>
+
+      <h1
+        class="text-3xl font-black text-slate-800 mb-4 tracking-tight uppercase"
+      >
+        অভিনন্দন!
+      </h1>
+      <p class="text-slate-600 mb-8 leading-relaxed">
+        আপনার ভর্তি আবেদনটি সফলভাবে গৃহীত হয়েছে। আমাদের টিম আপনার পেমেন্ট যাচাই
+        করে আগামী
+        <span class="font-bold text-indigo-600">24 ঘন্টার মধ্যে</span>
+        হোয়াটসঅ্যাপে কনফার্মেশন মেসেজ পাঠাবে।
+      </p>
+
+      <div
+        class="bg-indigo-50 rounded-2xl p-4 mb-8 text-sm text-indigo-800 font-medium"
+      >
+        যেকোনো প্রয়োজনে আমাদের সাথে যোগাযোগ করুন: <br />
+        <span class="font-bold">01332-502004</span>
+      </div>
+
+      <a
+        href="index.html"
+        class="inline-block bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-600 transition shadow-lg"
+      >
+        হোম পেজে ফিরে যান
+      </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script>
+      // পেজ লোড হওয়ার সাথে সাথে কনফেত্তি ইফেক্ট
+      document.addEventListener("DOMContentLoaded", () => {
+        if (typeof confetti !== "undefined") {
+          confetti({
+            particleCount: 150, // কতগুলো টুকরা উড়বে
+            spread: 90, // কতটুকু জায়গা জুড়ে ছড়াবে
+            origin: { y: 0.6 }, // স্ক্রিনের মাঝ বরাবর উপরে থেকে শুরু হবে
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

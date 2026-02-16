@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TenseMaster Bootcamp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #05070a; }
+        .completed-card { border-color: #10b981 !important; background-color: rgba(16, 185, 129, 0.05) !important; }
+        .rev-active { border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.05) !important; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="text-slate-300 antialiased">
+    <nav class="sticky top-0 z-50 bg-[#05070a]/95 backdrop-blur-md border-b border-slate-800/60 p-3">
+        <div class="max-w-7xl mx-auto flex flex-col gap-3">
+            <div class="flex items-center justify-between gap-2">
+                
+                <div class="flex items-center gap-1.5 bg-slate-900/80 p-1.5 rounded-xl border border-slate-800/50">
+                    <div class="px-2 py-0.5 text-center">
+                        <span class="text-[8px] font-bold text-slate-500 uppercase block leading-none">Done</span>
+                        <span id="doneStat" class="text-xs font-bold text-emerald-500">0</span>
+                    </div>
+                    <div class="w-[1px] h-4 bg-slate-800"></div>
+                    <div class="px-2 py-0.5 text-center">
+                        <span class="text-[8px] font-bold text-slate-500 uppercase block leading-none">Rev</span>
+                        <span id="revStat" class="text-xs font-bold text-blue-500">0</span>
+                    </div>
+                    <div class="w-[1px] h-4 bg-slate-800"></div>
+                    <div class="px-2 py-0.5 text-center">
+                        <span class="text-[8px] font-bold text-slate-500 uppercase block leading-none">Left</span>
+                        <span id="leftStat" class="text-xs font-bold text-rose-500">0</span>
+                    </div>
+                </div>
+
+                <!-- Home button   -->
+                <div>
+                    <a href="../index.html">Home</a>
+                </div>
+
+
+                <div class="flex items-center gap-2">
+                    <div class="relative">
+                        <button onclick="toggleDropdown()" id="dropdownBtn" class="flex items-center gap-1.5 bg-slate-900 border border-slate-800 px-3 py-2 rounded-xl text-[10px] font-bold text-slate-300">
+                            <span id="currentFilterText">All</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-32 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl z-50 overflow-hidden">
+                            <button onclick="selectFilter('All')" class="w-full text-left px-4 py-2 text-[10px] font-bold text-slate-400 hover:bg-slate-800 hover:text-white transition-colors border-b border-slate-800/50">All</button>
+                            <button onclick="selectFilter('Done')" class="w-full text-left px-4 py-2 text-[10px] font-bold text-emerald-500 hover:bg-emerald-600 hover:text-white transition-colors border-b border-slate-800/50">Done</button>
+                            <button onclick="selectFilter('Revision')" class="w-full text-left px-4 py-2 text-[10px] font-bold text-blue-500 hover:bg-blue-600 hover:text-white transition-colors border-b border-slate-800/50">Revision</button>
+                            <button onclick="selectFilter('Left')" class="w-full text-left px-4 py-2 text-[10px] font-bold text-rose-500 hover:bg-rose-600 hover:text-white transition-colors">Left</button>
+                        </div>
+                    </div>
+                    <button onclick="toggleSearch()" class="p-2 bg-slate-900 border border-slate-800 rounded-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="searchBox" class="hidden">
+                <input type="text" id="searchInput" onkeyup="applyView()" placeholder="Search word..." class="w-full bg-slate-950 border border-blue-500/30 rounded-xl p-2 text-xs text-white outline-none">
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-4">
+        <div id="vocab-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </main>
+
+    <script>
+    let allWords = []; // শুরুতে খালি থাকবে
+    let doneWords = JSON.parse(localStorage.getItem('doneWords')) || [];
+    let revWords = JSON.parse(localStorage.getItem('revWords')) || [];
+
+    // JSON ফাইল থেকে ডেটা লোড করার ফাংশন
+    async function loadWords() {
+        try {
+            const response = await fetch('words.json');
+            allWords = await response.json();
+            applyView(); // ডেটা লোড হওয়ার পর ভিউ আপডেট হবে
+        } catch (error) {
+            console.error("Error loading JSON:", error);
+            document.getElementById('vocab-container').innerHTML = `<p class="text-rose-500 text-center col-span-full">Error: words.json ফাইলটি খুঁজে পাওয়া যায়নি!</p>`;
+        }
+    }
+
+    function updateStats() {
+        document.getElementById('doneStat').innerText = doneWords.length;
+        document.getElementById('revStat').innerText = revWords.length;
+        document.getElementById('leftStat').innerText = allWords.length - doneWords.length;
+    }
+
+    function toggleStatus(word, type) {
+        if (type === 'done') {
+            const dIdx = doneWords.indexOf(word);
+            if (dIdx > -1) {
+                doneWords.splice(dIdx, 1);
+            } else {
+                doneWords.push(word);
+                const rIdx = revWords.indexOf(word);
+                if (rIdx > -1) revWords.splice(rIdx, 1);
+            }
+        } else {
+            const rIdx = revWords.indexOf(word);
+            if (rIdx > -1) {
+                revWords.splice(rIdx, 1);
+            } else {
+                revWords.push(word);
+                const dIdx = doneWords.indexOf(word);
+                if (dIdx > -1) doneWords.splice(dIdx, 1);
+            }
+        }
+        localStorage.setItem('doneWords', JSON.stringify(doneWords));
+        localStorage.setItem('revWords', JSON.stringify(revWords));
+        applyView();
+    }
+
+    function applyView() {
+        const filter = document.getElementById('currentFilterText').innerText;
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        let filtered = allWords;
+
+        if (filter === 'Done') filtered = allWords.filter(w => doneWords.includes(w.word));
+        else if (filter === 'Revision') filtered = allWords.filter(w => revWords.includes(w.word));
+        else if (filter === 'Left') filtered = allWords.filter(w => !doneWords.includes(w.word));
+
+        if (query) {
+            filtered = filtered.filter(w => 
+                w.word.toLowerCase().includes(query) || 
+                w.bn.includes(query)
+            );
+        }
+        renderWords(filtered);
+    }
+
+    function renderWords(data) {
+        const container = document.getElementById('vocab-container');
+        if (data.length === 0) {
+            container.innerHTML = `<p class="text-slate-500 text-center col-span-full py-10">No words found!</p>`;
+            updateStats();
+            return;
+        }
+
+        container.innerHTML = data.map((item) => {
+            const isDone = doneWords.includes(item.word);
+            const isRev = revWords.includes(item.word);
+            const originalIndex = allWords.findIndex(w => w.word === item.word);
+            
+            return `
+            <div class="bg-[#0e121d] border-2 ${isDone ? 'completed-card' : isRev ? 'rev-active' : 'border-slate-800/60'} rounded-[1.5rem] p-5 transition-all">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-[9px] font-mono font-bold text-slate-600">#${String(originalIndex + 1).padStart(3, '0')}</span>
+                    <div class="flex items-center gap-3">
+                        <button onclick="speak('${item.word}')" class="p-1.5 bg-slate-800 rounded-lg text-[10px] hover:bg-slate-700">🔊</button>
+                        <div class="flex items-center gap-2 bg-slate-900/50 p-1 rounded-lg border border-slate-800">
+                            <label class="flex flex-col items-center gap-0.5 cursor-pointer">
+                                <span class="text-[7px] font-bold ${isDone ? 'text-emerald-500' : 'text-slate-600'} uppercase">Done</span>
+                                <input type="checkbox" ${isDone ? 'checked' : ''} onchange="toggleStatus('${item.word}', 'done')" class="w-4 h-4 rounded-full accent-emerald-500 cursor-pointer">
+                            </label>
+                            <div class="w-[1px] h-5 bg-slate-800"></div>
+                            <label class="flex flex-col items-center gap-0.5 cursor-pointer">
+                                <span class="text-[7px] font-bold ${isRev ? 'text-blue-500' : 'text-slate-600'} uppercase">Rev</span>
+                                <input type="checkbox" ${isRev ? 'checked' : ''} onchange="toggleStatus('${item.word}', 'rev')" class="w-4 h-4 rounded-full accent-blue-500 cursor-pointer">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <h3 class="text-xl font-black text-white leading-tight">${item.word}</h3>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="text-[11px] font-medium text-blue-400">${item.bn}</span>
+                        <span class="text-[7px] font-black uppercase bg-blue-900/20 text-blue-400 px-1.5 py-0.5 rounded border border-blue-800/30">${item.pos}</span>
+                    </div>
+                </div>
+                <p class="text-[11px] text-slate-400 italic my-3 border-l-2 border-slate-800 pl-2">"${item.def}"</p>
+                <div class="space-y-2 text-[10px]">
+                    <div class="bg-slate-950/40 p-2 rounded-xl border border-slate-800/40"><span class="text-[7px] font-black text-blue-500 block mb-0.5 uppercase">Past</span>${item.past}</div>
+                    <div class="bg-slate-950/40 p-2 rounded-xl border border-slate-800/40"><span class="text-[7px] font-black text-emerald-500 block mb-0.5 uppercase">Present</span>${item.present}</div>
+                    <div class="bg-slate-950/40 p-2 rounded-xl border border-slate-800/40"><span class="text-[7px] font-black text-purple-500 block mb-0.5 uppercase">Future</span>${item.future}</div>
+                </div>
+            </div>`;
+        }).join('');
+        updateStats();
+    }
+
+    // ড্রপডাউন এবং অন্যান্য ফাংশন আগের মতোই থাকবে
+    function selectFilter(label) {
+        document.getElementById('currentFilterText').innerText = label;
+        document.getElementById('dropdownMenu').classList.add('hidden');
+        applyView();
+    }
+
+    function toggleDropdown() { document.getElementById('dropdownMenu').classList.toggle('hidden'); }
+    function toggleSearch() { 
+        const box = document.getElementById('searchBox');
+        box.classList.toggle('hidden');
+        if(!box.classList.contains('hidden')) document.getElementById('searchInput').focus();
+    }
+   function speak(text) { 
+    // আগের সেই সিম্পল ভার্সন যা ব্রাউজারের সেরা ভয়েসটি বেছে নেয়
+    window.speechSynthesis.cancel(); // আগের কোনো সাউন্ড চললে তা বন্ধ করবে
+    const utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance); 
+}
+    window.onclick = function(e) { if (!e.target.closest('#dropdownBtn')) document.getElementById('dropdownMenu').classList.add('hidden'); }
+
+    // পেজ লোড হলে JSON কল করা
+    loadWords();
+</script>
+</body>
+</html>

@@ -1,0 +1,504 @@
+[
+  {
+    "word": "A / An",
+    "bn": "একটি",
+    "level": "A1",
+    "pos": "Indefinite article",
+    "def": "Used before a singular noun.",
+    "past": "I saw a bird yesterday.",
+    "present": "I have an apple now.",
+    "future": "I will buy a new car."
+  },
+  {
+    "word": "About",
+    "bn": "সম্পর্কে / প্রায়",
+    "level": "A1",
+    "pos": "Prep, Adv",
+    "def": "Regarding a subject or almost.",
+    "past": "We talked about the trip.",
+    "present": "It is about 5 o'clock.",
+    "future": "I will tell you about it later."
+  },
+  {
+    "word": "Above",
+    "bn": "উপরে",
+    "level": "A1",
+    "pos": "Prep, Adv",
+    "def": "In a higher place.",
+    "past": "The sun rose above the hills.",
+    "present": "The sky is above us.",
+    "future": "The plane will fly above the clouds."
+  },
+  {
+    "word": "Across",
+    "bn": "আড়াআড়ি / ওপারে",
+    "level": "A1",
+    "pos": "Prep, Adv",
+    "def": "From one side to the other.",
+    "past": "He walked across the bridge.",
+    "present": "She lives across the street.",
+    "future": "We will travel across the country."
+  },
+  {
+    "word": "Action",
+    "bn": "কাজ / কর্ম",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "The process of doing something.",
+    "past": "His action saved the cat.",
+    "present": "I like this action movie.",
+    "future": "We will take action tomorrow."
+  },
+  {
+    "word": "Activity",
+    "bn": "কার্যকলাপ",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "Something you do for interest or help.",
+    "past": "The activity was very fun.",
+    "present": "What is your favorite activity?",
+    "future": "We will plan a new activity."
+  },
+  {
+    "word": "Actor",
+    "bn": "অভিনেতা",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "A person who acts in a play or movie.",
+    "past": "He was a famous actor.",
+    "present": "He is my favorite actor.",
+    "future": "He will be a great actor."
+  },
+  {
+    "word": "Actress",
+    "bn": "অভিনেত্রী",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "A woman who acts in a play or movie.",
+    "past": "She was a child actress.",
+    "present": "She is a talented actress.",
+    "future": "She will be an amazing actress."
+  },
+  {
+    "word": "Add",
+    "bn": "যোগ করা",
+    "level": "A1",
+    "pos": "Verb",
+    "def": "To put something with something else.",
+    "past": "I added sugar to the coffee.",
+    "present": "Please add my name.",
+    "future": "I will add more details later."
+  },
+  {
+    "word": "Address",
+    "bn": "ঠিকানা",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "The details of where you live.",
+    "past": "I found his old address.",
+    "present": "What is your current address?",
+    "future": "I will send the address to you."
+  },
+  {
+    "word": "Adult",
+    "bn": "প্রাপ্তবয়স্ক",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "A fully grown person.",
+    "past": "He grew up to be an adult.",
+    "present": "This movie is for an adult.",
+    "future": "You will be an adult soon."
+  },
+  {
+    "word": "Advice",
+    "bn": "উপদেশ / পরামর্শ",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "Suggestions about what to do.",
+    "past": "He gave me some advice.",
+    "present": "I need your advice.",
+    "future": "I will give you my advice."
+  },
+  {
+    "word": "Afraid",
+    "bn": "ভীত",
+    "level": "A1",
+    "pos": "Adj",
+    "def": "Feeling fear or worry.",
+    "past": "I was afraid of dogs.",
+    "present": "Don't be afraid.",
+    "future": "I will not be afraid anymore."
+  },
+  {
+    "word": "After",
+    "bn": "পরে",
+    "level": "A1",
+    "pos": "Prep",
+    "def": "Later than something.",
+    "past": "I slept after the dinner.",
+    "present": "I am busy after work.",
+    "future": "I will call you after 5 PM."
+  },
+  {
+    "word": "Afternoon",
+    "bn": "বিকাল",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "The time between noon and evening.",
+    "past": "I slept all afternoon.",
+    "present": "It is a sunny afternoon.",
+    "future": "I will see you this afternoon."
+  },
+  {
+    "word": "Again",
+    "bn": "আবার",
+    "level": "A1",
+    "pos": "Adv",
+    "def": "One more time.",
+    "past": "It happened again.",
+    "present": "Please say it again.",
+    "future": "I will try again tomorrow."
+  },
+  {
+    "word": "Age",
+    "bn": "বয়স",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "Number of years someone has lived.",
+    "past": "He was old for his age.",
+    "present": "What is your age?",
+    "future": "He will act better at his age."
+  },
+  {
+    "word": "Ago",
+    "bn": "আগে / পূর্বে",
+    "level": "A1",
+    "pos": "Adv",
+    "def": "Before the present time.",
+    "past": "I met her two years ago.",
+    "present": "It was long ago.",
+    "future": "Not used for future tenses."
+  },
+  {
+    "word": "Agree",
+    "bn": "রাজি হওয়া / একমত হওয়া",
+    "level": "A1",
+    "pos": "Verb",
+    "def": "To have the same opinion.",
+    "past": "They agreed yesterday.",
+    "present": "I agree with you.",
+    "future": "We will agree eventually."
+  },
+  {
+    "word": "Air",
+    "bn": "বাতাস",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "The gas we breathe.",
+    "past": "The air was cold.",
+    "present": "I need some fresh air.",
+    "future": "The air will be cleaner soon."
+  },
+  {
+    "word": "Airport",
+    "bn": "বিমানবন্দর",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "A place where planes take off.",
+    "past": "I was at the airport.",
+    "present": "The airport is busy.",
+    "future": "I will go to the airport."
+  },
+  {
+    "word": "All",
+    "bn": "সব / সবটুকু",
+    "level": "A1",
+    "pos": "Det, Pron",
+    "def": "The whole amount.",
+    "past": "I ate all the food.",
+    "present": "All my books are new.",
+    "future": "I will take all of them."
+  },
+  {
+    "word": "Also",
+    "bn": "ও / আরও",
+    "level": "A1",
+    "pos": "Adv",
+    "def": "In addition to.",
+    "past": "She was also invited.",
+    "present": "He also likes music.",
+    "future": "I will also attend the party."
+  },
+  {
+    "word": "Always",
+    "bn": "সবসময়",
+    "level": "A1",
+    "pos": "Adv",
+    "def": "At all times.",
+    "past": "She always smiled.",
+    "present": "I always drink milk.",
+    "future": "I will always love you."
+  },
+  {
+    "word": "Amazing",
+    "bn": "অসাধারণ / বিস্ময়কর",
+    "level": "A1",
+    "pos": "Adj",
+    "def": "Very good or surprising.",
+    "past": "The trip was amazing.",
+    "present": "You are amazing.",
+    "future": "The show will be amazing."
+  },
+  {
+    "word": "And",
+    "bn": "এবং / ও",
+    "level": "A1",
+    "pos": "Conj",
+    "def": "Used to connect words.",
+    "past": "I had fish and chips.",
+    "present": "She and I are friends.",
+    "future": "I will buy bread and eggs."
+  },
+  {
+    "word": "Angry",
+    "bn": "রাগান্বিত",
+    "level": "A1",
+    "pos": "Adj",
+    "def": "Feeling strong displeasure.",
+    "past": "He was very angry.",
+    "present": "Why are you angry?",
+    "future": "He will be angry with us."
+  },
+  {
+    "word": "Animal",
+    "bn": "প্রাণী",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "A living thing that isn't a plant.",
+    "past": "I saw a wild animal.",
+    "present": "I love every animal.",
+    "future": "We will see many animals."
+  },
+  {
+    "word": "Another",
+    "bn": "অন্য একটি",
+    "level": "A1",
+    "pos": "Det/Pron",
+    "def": "One more of the same kind.",
+    "past": "I had another cup.",
+    "present": "Give me another one.",
+    "future": "I will buy another book."
+  },
+  {
+    "word": "Answer",
+    "bn": "উত্তর",
+    "level": "A1",
+    "pos": "Noun, Verb",
+    "def": "Response to a question.",
+    "past": "He answered the phone.",
+    "present": "I know the answer.",
+    "future": "I will answer you later."
+  },
+  {
+    "word": "Any",
+    "bn": "যেকোনো",
+    "level": "A1",
+    "pos": "Det, Pron",
+    "def": "Some, regardless of how much.",
+    "past": "I didn't see any cars.",
+    "present": "Do you have any pen?",
+    "future": "I won't need any help."
+  },
+  {
+    "word": "Anyone",
+    "bn": "যে কেউ",
+    "level": "A1",
+    "pos": "Pron",
+    "def": "Any person.",
+    "past": "Did anyone call?",
+    "present": "Is anyone home?",
+    "future": "Anyone can do it."
+  },
+  {
+    "word": "Anything",
+    "bn": "যেকোনো কিছু",
+    "level": "A1",
+    "pos": "Pron",
+    "def": "Any object or event.",
+    "past": "I didn't eat anything.",
+    "present": "Do you need anything?",
+    "future": "Anything will be fine."
+  },
+  {
+    "word": "Apartment",
+    "bn": "ফ্ল্যাট / অ্যাপার্টমেন্ট",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "A set of rooms to live in.",
+    "past": "I rented an apartment.",
+    "present": "My apartment is small.",
+    "future": "I will buy an apartment."
+  },
+  {
+    "word": "Apple",
+    "bn": "আপেল",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "A common round fruit.",
+    "past": "I ate an apple.",
+    "present": "The apple is red.",
+    "future": "I will pick some apples."
+  },
+  {
+    "word": "April",
+    "bn": "এপ্রিল মাস",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "The 4th month of the year.",
+    "past": "I was born in April.",
+    "present": "It is April now.",
+    "future": "Next month will be April."
+  },
+  {
+    "word": "Area",
+    "bn": "এলাকা",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "A particular part of a place.",
+    "past": "I visited the area.",
+    "present": "This area is safe.",
+    "future": "We will explore this area."
+  },
+  {
+    "word": "Arm",
+    "bn": "বাহু / হাত",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "Part of the body from hand to shoulder.",
+    "past": "I broke my arm.",
+    "present": "My arm hurts.",
+    "future": "He will use his arm."
+  },
+  {
+    "word": "Around",
+    "bn": "চারপাশে / আশেপাশে",
+    "level": "A1",
+    "pos": "Prep, Adv",
+    "def": "In a circle or near.",
+    "past": "We drove around the city.",
+    "present": "They are around here.",
+    "future": "I will be around later."
+  },
+  {
+    "word": "Arrive",
+    "bn": "পৌঁছানো",
+    "level": "A1",
+    "pos": "Verb",
+    "def": "To reach a place.",
+    "past": "The bus arrived late.",
+    "present": "I arrive at 9 AM.",
+    "future": "We will arrive soon."
+  },
+  {
+    "word": "Art",
+    "bn": "শিল্প / কলা",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "Creation of beautiful things.",
+    "past": "I liked his art.",
+    "present": "Art is beautiful.",
+    "future": "I will study art."
+  },
+  {
+    "word": "Article",
+    "bn": "প্রবন্ধ / নিবন্ধ",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "A piece of writing in a newspaper.",
+    "past": "I read the article.",
+    "present": "This is a long article.",
+    "future": "I will write an article."
+  },
+  {
+    "word": "Artist",
+    "bn": "শিল্পী",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "A person who creates art.",
+    "past": "He was a great artist.",
+    "present": "She is a local artist.",
+    "future": "You will be an artist."
+  },
+  {
+    "word": "As",
+    "bn": "হিসেবে",
+    "level": "A1",
+    "pos": "Prep",
+    "def": "In the role of.",
+    "past": "He worked as a waiter.",
+    "present": "Use it as a tool.",
+    "future": "I will go as your friend."
+  },
+  {
+    "word": "Ask",
+    "bn": "জিজ্ঞাসা করা",
+    "level": "A1",
+    "pos": "Verb",
+    "def": "To request information.",
+    "past": "I asked him a question.",
+    "present": "Ask me anything.",
+    "future": "I will ask the teacher."
+  },
+  {
+    "word": "At",
+    "bn": "স্থানে / সময়ে (প্রতি)",
+    "level": "A1",
+    "pos": "Prep",
+    "def": "Used to show a place or time.",
+    "past": "I was at home.",
+    "present": "I am at work.",
+    "future": "I will be at school."
+  },
+  {
+    "word": "August",
+    "bn": "আগস্ট মাস",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "The 8th month of the year.",
+    "past": "We met last August.",
+    "present": "It is August.",
+    "future": "August will be hot."
+  },
+  {
+    "word": "Aunt",
+    "bn": "খালা / ফুফু / চাচি",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "The sister of your father or mother.",
+    "past": "My aunt visited us.",
+    "present": "She is my favorite aunt.",
+    "future": "My aunt will come later."
+  },
+  {
+    "word": "Autumn",
+    "bn": "শরৎকাল",
+    "level": "A1",
+    "pos": "Noun",
+    "def": "The season before winter.",
+    "past": "I saw him last autumn.",
+    "present": "Autumn is beautiful.",
+    "future": "Autumn will start soon."
+  },
+  {
+    "word": "Away",
+    "bn": "দূরে",
+    "level": "A1",
+    "pos": "Adv",
+    "def": "To another place or distance.",
+    "past": "He went away.",
+    "present": "Stay away from fire.",
+    "future": "I will be away next week."
+  }
+]
+
+
