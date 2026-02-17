@@ -22,135 +22,110 @@
   </head>
   <body class="body bg-slate-50 text-slate-900 overflow-x-hidden">
     <!-- Navbar Section Starts Here -->
-    <nav
-      class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center"
-      >
-        <div class="flex items-center gap-2">
-          <div
-            class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-indigo-200"
-          >
-            F
-          </div>
-          <h1 class="text-2xl font-black text-slate-800 tracking-tighter">
-            FLUENTOSH
-          </h1>
-        </div>
+   <nav class="bg-[#05070a]/90 backdrop-blur-md sticky top-0 z-[100] border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-500/20">
+        F
+      </div>
+      <h1 class="text-2xl font-black text-white tracking-tighter">
+        FLUENTOSH
+      </h1>
+    </div>
 
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            href="#"
-            class="text-slate-600 font-semibold hover:text-indigo-600 transition"
-            >Home</a
-          >
-
-          <div class="relative group">
-            <button
-              class="flex items-center gap-1 text-slate-600 font-semibold group-hover:text-indigo-600 transition py-2"
-            >
-              Courses
-              <svg
-                class="w-4 h-4 transition-transform group-hover:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-
-            <div
-              class="absolute left-0 top-full mt-1 w-56 bg-white border border-slate-100 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 overflow-hidden"
-            >
-              <a
-                href="#"
-                class="block px-6 py-4 text-sm text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition font-medium border-b border-slate-50"
-                >Spoken English Bootcamp</a
-              >
-
-              <a
-                href="./Vocabulary_course/vocabulary.html"
-                class="block px-6 py-4 text-sm text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition font-medium"
-                >Vocabulary Course</a
-              >
-            </div>
-          </div>
-
-          <a
-            onclick="openModal()"
-            class="bg-indigo-600 text-white px-6 py-2.5 rounded-full font-bold hover:bg-slate-900 transition-all shadow-xl shadow-indigo-100"
-          >
-            Enroll Now
-          </a>
-        </div>
-
-        <div class="md:hidden flex items-center">
-          <button
-            id="mobile-menu-button"
-            class="text-slate-600 focus:outline-none"
-          >
-            <svg
-              id="menu-icon"
-              class="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#" class="text-slate-300 font-bold hover:text-white transition">Home</a>
+      
+      <div class="relative group">
+        <button class="flex items-center gap-1 text-slate-300 font-bold group-hover:text-white transition py-2">
+          Courses
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="absolute left-0 top-full mt-2 w-64 bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-4 z-50 overflow-hidden">
+          <a href="#" class="block px-6 py-4 text-sm text-slate-300 hover:bg-white/5 hover:text-white transition font-bold border-b border-white/5">Spoken English Bootcamp</a>
+          <a href="./Vocabulary_course/vocabulary.html" class="block px-6 py-4 text-sm text-slate-300 hover:bg-white/5 hover:text-white transition font-bold">Vocabulary Course</a>
         </div>
       </div>
 
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-6 space-y-4 shadow-xl"
-      >
-        <a
-          href="#"
-          class="block text-slate-600 font-semibold py-2 border-b border-slate-50"
-          >Home</a
-        >
-        <div class="space-y-2">
-          <p
-            class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-4"
-          >
-            Our Courses
-          </p>
-          <a
-            href="#"
-            class="block text-slate-700 font-medium pl-4 py-2 hover:text-indigo-600"
-            >Spoken English Bootcamp</a
-          >
+      <a onclick="openModal()" class="cursor-pointer bg-white text-black px-7 py-2.5 rounded-full font-black hover:bg-indigo-600 hover:text-white transition-all shadow-lg active:scale-95">
+        Enroll Now
+      </a>
+    </div>
 
-          <a
-            href="./Vocabulary_course/vocabulary.html"
-            class="block text-slate-700 font-medium pl-4 py-2 hover:text-indigo-600"
-            >Vocabulary Bootcamp</a
-          >
-        </div>
-        <div class="pt-4">
-          <a
-            onclick="openModal()"
-            class="block w-full bg-indigo-600 text-white text-center px-6 py-4 rounded-xl font-bold shadow-lg shadow-indigo-100"
-          >
-            Enroll Now
+    <div class="md:hidden flex items-center">
+      <button id="mobile-menu-button" class="text-white focus:outline-none p-2 transition-transform active:scale-90">
+        <svg id="hamburger-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu-drawer" class="hidden md:hidden bg-[#0f172a] border-b border-white/10 shadow-2xl overflow-hidden">
+    <div class="px-4 py-6 space-y-2 animate-slide-down">
+      
+      <a href="#" class="block text-xl font-bold text-white px-4 py-3 rounded-xl hover:bg-white/10 transition-all duration-300">
+        Home
+      </a>
+      
+      <div class="pt-2">
+        <p class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] px-4 mb-2">Our Courses</p>
+        <div class="space-y-1">
+          <a href="#" class="block text-lg font-bold text-slate-300 px-4 py-3 rounded-xl hover:bg-indigo-600/20 hover:text-indigo-400 transition-all duration-300">
+            Spoken English Bootcamp
+          </a>
+          <a href="./Vocabulary_course/vocabulary.html" class="block text-lg font-bold text-slate-300 px-4 py-3 rounded-xl hover:bg-indigo-600/20 hover:text-indigo-400 transition-all duration-300">
+            Vocabulary Course
           </a>
         </div>
       </div>
-    </nav>
+      
+      <div class="pt-6 px-4">
+        <a onclick="openModal(); toggleMobileMenu();" class="block w-full bg-gradient-to-r from-indigo-600 to-rose-600 text-white text-center py-4 rounded-2xl font-black text-lg shadow-xl active:scale-95">
+          Enroll Now 🚀
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-slide-down {
+    animation: slideDown 0.4s ease-out forwards;
+  }
+</style>
+
+<script>
+  (function() {
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const menuDrawer = document.getElementById('mobile-menu-drawer');
+    const menuPath = document.getElementById('menu-path');
+    let isMenuOpen = false;
+
+    function toggleMobileMenu() {
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        menuDrawer.classList.remove('hidden');
+        menuPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      } else {
+        menuDrawer.classList.add('hidden');
+        menuPath.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+      }
+    }
+
+    if(menuBtn) {
+      menuBtn.addEventListener('click', toggleMobileMenu);
+    }
+  })();
+</script>
 
     <!-- Navbar Section Ends Here -->
 
@@ -1193,56 +1168,109 @@
     <!-- your all questions ends here -->
 
     <!-- তাহলে আর দেরি কেন করবেন? Section Starts Here -->
-   <section class="py-24 bg-[#05070a] px-4 font-['Plus_Jakarta_Sans',sans-serif]">
-  <div class="max-w-7xl mx-auto">
-    <div class="relative bg-slate-900/30 rounded-[2rem] md:rounded-[3rem] p-8 md:p-24 overflow-hidden text-center border border-white/10 shadow-[0_0_50px_-12px_rgba(79,70,229,0.2)] group transition-all duration-700 hover:border-indigo-500/30">
-      
-      <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700"
-        style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 40px 40px;">
-      </div>
-      <div class="absolute -bottom-24 -left-24 w-[20rem] md:w-[30rem] h-[20rem] md:h-[30rem] bg-indigo-600/20 blur-[120px] rounded-full group-hover:bg-indigo-600/30 transition-all duration-700"></div>
-      <div class="absolute -top-24 -right-24 w-[20rem] md:w-[30rem] h-[20rem] md:h-[30rem] bg-rose-600/10 blur-[120px] rounded-full group-hover:bg-rose-600/20 transition-all duration-700"></div>
+    <section
+      class="py-24 bg-[#05070a] px-4 font-['Plus_Jakarta_Sans',sans-serif]"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="relative bg-slate-900/30 rounded-[2rem] md:rounded-[3rem] p-8 md:p-24 overflow-hidden text-center border border-white/10 shadow-[0_0_50px_-12px_rgba(79,70,229,0.2)] group transition-all duration-700 hover:border-indigo-500/30"
+        >
+          <div
+            class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700"
+            style="
+              background-image: radial-gradient(#6366f1 1px, transparent 1px);
+              background-size: 40px 40px;
+            "
+          ></div>
+          <div
+            class="absolute -bottom-24 -left-24 w-[20rem] md:w-[30rem] h-[20rem] md:h-[30rem] bg-indigo-600/20 blur-[120px] rounded-full group-hover:bg-indigo-600/30 transition-all duration-700"
+          ></div>
+          <div
+            class="absolute -top-24 -right-24 w-[20rem] md:w-[30rem] h-[20rem] md:h-[30rem] bg-rose-600/10 blur-[120px] rounded-full group-hover:bg-rose-600/20 transition-all duration-700"
+          ></div>
 
-      <div class="relative z-10">
-        <h2 class="text-3xl md:text-6xl font-black text-white mb-6 md:mb-8 tracking-tight">
-          তাহলে আর দেরি <span class="text-rose-500">কেন?</span>
-        </h2>
+          <div class="relative z-10">
+            <h2
+              class="text-3xl md:text-6xl font-black text-white mb-6 md:mb-8 tracking-tight"
+            >
+              তাহলে আর দেরি <span class="text-rose-500">কেন?</span>
+            </h2>
 
-        <h3 class="text-xl md:text-5xl font-extrabold mb-8 md:mb-10 leading-tight">
-          <span class="text-white">১৫ দিনে শেখো</span>
-          <span class="bg-gradient-to-r from-indigo-400 via-purple-500 to-rose-500 text-transparent bg-clip-text">স্পোকেন ইংলিশ,</span>
-          <span class="text-white">বদলে ফেলো নিজের</span>
-          <span class="bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text italic">ফিউচার</span>
-        </h3>
+            <h3
+              class="text-xl md:text-5xl font-extrabold mb-8 md:mb-10 leading-tight"
+            >
+              <span class="text-white">১৫ দিনে শেখো</span>
+              <span
+                class="bg-gradient-to-r from-indigo-400 via-purple-500 to-rose-500 text-transparent bg-clip-text"
+                >স্পোকেন ইংলিশ,</span
+              >
+              <span class="text-white">বদলে ফেলো নিজের</span>
+              <span
+                class="bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text italic"
+                >ফিউচার</span
+              >
+            </h3>
 
-        <p class="text-slate-400 max-w-3xl mx-auto text-base md:text-xl leading-relaxed mb-10 md:mb-14 px-2">
-          প্রযুক্তির এই যুগে ইংরেজি জানা মানে শুধু একটি স্কিল নয়, এটি একটি স্ট্রং ক্যারিয়ার গড়ার চাবিকাঠি। 
-          <span class="text-white font-bold italic underline decoration-indigo-500">Fluentosh</span> 
-          বুটক্যাম্পে তুমি পাবে ১৫ দিনের ইনটেনসিভ ওরাল ড্রিলস।
-        </p>
+            <p
+              class="text-slate-400 max-w-3xl mx-auto text-base md:text-xl leading-relaxed mb-10 md:mb-14 px-2"
+            >
+              প্রযুক্তির এই যুগে ইংরেজি জানা মানে শুধু একটি স্কিল নয়, এটি একটি
+              স্ট্রং ক্যারিয়ার গড়ার চাবিকাঠি।
+              <span
+                class="text-white font-bold italic underline decoration-indigo-500"
+                >Fluentosh</span
+              >
+              বুটক্যাম্পে তুমি পাবে ১৫ দিনের ইনটেনসিভ ওরাল ড্রিলস।
+            </p>
 
-        <div class="relative inline-block group/btn w-full md:w-auto px-4 md:px-0">
-          <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-rose-600 rounded-2xl blur opacity-30 group-hover/btn:opacity-100 transition duration-1000 group-hover/btn:duration-200 animate-pulse"></div>
-          
-          <a onclick="openModal()" 
-             class="relative bg-white text-black px-6 md:px-12 py-5 md:py-6 rounded-2xl font-black text-lg md:text-2xl flex items-center justify-center gap-3 md:gap-4 hover:bg-indigo-600 hover:text-white transition-all duration-500 shadow-2xl cursor-pointer w-full md:w-auto">
-             Enroll Now 
-             <svg class="w-6 h-6 md:w-8 md:h-8 group-hover/btn:translate-x-2 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-             </svg>
-          </a>
+            <div
+              class="relative inline-block group/btn w-full md:w-auto px-4 md:px-0"
+            >
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-rose-600 rounded-2xl blur opacity-30 group-hover/btn:opacity-100 transition duration-1000 group-hover/btn:duration-200 animate-pulse"
+              ></div>
+
+              <a
+                onclick="openModal()"
+                class="relative bg-white text-black px-6 md:px-12 py-5 md:py-6 rounded-2xl font-black text-lg md:text-2xl flex items-center justify-center gap-3 md:gap-4 hover:bg-indigo-600 hover:text-white transition-all duration-500 shadow-2xl cursor-pointer w-full md:w-auto"
+              >
+                Enroll Now
+                <svg
+                  class="w-6 h-6 md:w-8 md:h-8 group-hover/btn:translate-x-2 transition-transform duration-300 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+
+            <p
+              class="mt-8 text-slate-500 text-sm md:text-base font-medium flex items-center justify-center gap-2"
+            >
+              <svg
+                class="w-5 h-5 text-emerald-500 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              সীমিত সময়ের জন্য ডিসকাউন্ট অফার চলছে!
+            </p>
+          </div>
         </div>
-
-        <p class="mt-8 text-slate-500 text-sm md:text-base font-medium flex items-center justify-center gap-2">
-          <svg class="w-5 h-5 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-          </svg>
-          সীমিত সময়ের জন্য ডিসকাউন্ট অফার চলছে!
-        </p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
     <!-- তাহলে আর দেরি কেন করবেন? Section Ends Here -->
 
     <!-- Enroll Section Starts Here -->
@@ -1251,19 +1279,19 @@
       class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4"
     >
       <div
-        class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+        class="absolute inset-0 bg-black/85 backdrop-blur-md"
         onclick="closeModal()"
       ></div>
 
       <div
-        class="relative max-w-5xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
+        class="relative max-w-2xl w-full bg-[#0f172a] rounded-[2rem] shadow-2xl overflow-hidden border border-white/10 flex flex-col md:flex-row max-h-[95vh] overflow-y-auto"
       >
         <button
           onclick="closeModal()"
-          class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 z-10"
+          class="absolute top-4 right-4 text-slate-400 hover:text-white z-20 bg-slate-800/80 rounded-full p-1.5 transition"
         >
           <svg
-            class="w-8 h-8"
+            class="w-5 h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -1271,45 +1299,150 @@
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              stroke-width="2.5"
               d="M6 18L18 6M6 6l12 12"
             ></path>
           </svg>
         </button>
 
-        <div class="md:w-1/2 bg-blue-600 p-10 text-white">
-          <h3 class="text-3xl font-bold mb-6">ভর্তি পদ্ধতি</h3>
-          <p class="mb-8 text-blue-100 italic">
-            নিচের নম্বরগুলোতে ১০০ টাকা "Send Money" করে ফর্মটি পূরণ করুন।
+        <div
+          class="md:w-[45%] bg-indigo-600 p-8 text-white flex flex-col justify-center"
+        >
+          <div class="mb-6">
+            <span
+              class="bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider"
+              >স্পেশাল অফার</span
+            >
+            <h3 class="text-4xl font-black mt-2 leading-tight">
+              ৳২৯৯ <span class="text-lg font-medium opacity-80">মাত্র</span>
+            </h3>
+          </div>
+
+          <p class="text-sm text-indigo-100 mb-8 leading-relaxed">
+            নিচের নম্বরটিতে
+            <span class="font-bold underline text-white">Send Money</span> করো।
+            নম্বরটির ওপর ক্লিক করলেই কপি হয়ে যাবে।
           </p>
+
           <div class="space-y-4">
-            <div class="bg-white/10 p-4 rounded-xl">
-              <p class="text-sm opacity-80">বিকাশ (Personal)</p>
-              <p class="text-2xl font-mono font-bold">01XXX-XXXXXX</p>
+            <div
+              onclick="copyNumber('01891554173', 'bkash-toast')"
+              class="relative cursor-pointer bg-white/10 p-4 rounded-2xl border border-white/20 hover:bg-white/20 transition-all active:scale-95 group"
+            >
+              <p class="text-[11px] uppercase tracking-widest opacity-70 mb-1">
+                বিকাশ (Personal)
+              </p>
+              <div class="flex items-center justify-between">
+                <p class="text-xl font-mono font-black tracking-wider">
+                  01891554173
+                </p>
+                <svg
+                  class="w-5 h-5 opacity-50 group-hover:opacity-100"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7v8a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2h-6a2 2 0 00-2 2z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h6a2 2 0 002-2v-3"
+                  ></path>
+                </svg>
+              </div>
+              <span
+                id="bkash-toast"
+                class="absolute -top-2 right-2 bg-emerald-500 text-[10px] px-2 py-1 rounded hidden animate-bounce"
+                >Copied!</span
+              >
             </div>
-            <div class="bg-white/10 p-4 rounded-xl">
-              <p class="text-sm opacity-80">নগদ (Personal)</p>
-              <p class="text-2xl font-mono font-bold">01XXX-XXXXXX</p>
+
+            <div
+              onclick="copyNumber('01891554173', 'nagad-toast')"
+              class="relative cursor-pointer bg-white/10 p-4 rounded-2xl border border-white/20 hover:bg-white/20 transition-all active:scale-95 group"
+            >
+              <p class="text-[11px] uppercase tracking-widest opacity-70 mb-1">
+                নগদ (Personal)
+              </p>
+              <div class="flex items-center justify-between">
+                <p class="text-xl font-mono font-black tracking-wider">
+                  01891554173
+                </p>
+                <svg
+                  class="w-5 h-5 opacity-50 group-hover:opacity-100"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7v8a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2h-6a2 2 0 00-2 2z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h6a2 2 0 002-2v-3"
+                  ></path>
+                </svg>
+              </div>
+              <span
+                id="nagad-toast"
+                class="absolute -top-2 right-2 bg-emerald-500 text-[10px] px-2 py-1 rounded hidden animate-bounce"
+                >Copied!</span
+              >
             </div>
           </div>
         </div>
 
-        <div class="md:w-1/2 p-10 bg-white">
-          <form id="bootcampForm" class="space-y-5">
+        <div class="md:w-[55%] p-8 bg-slate-900">
+          <h4 class="text-white font-bold mb-6 flex items-center gap-2">
+            <span
+              class="w-6 h-6 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center text-xs"
+              >✔</span
+            >
+            পেমেন্টের তথ্য দাও
+          </h4>
+          <form id="bootcampForm" class="space-y-4">
             <div>
-              <label class="block text-sm font-bold text-slate-700 mb-1"
-                >পূর্ণ নাম</label
+              <label
+                class="block text-[10px] font-bold text-slate-500 mb-1.5 ml-1 uppercase tracking-widest"
+                >আপনার পূর্ণ নাম</label
               >
               <input
                 type="text"
                 id="userName"
-                placeholder="আপনার নাম"
+                placeholder="Type your name"
                 required
-                class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 outline-none"
+                class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition text-sm"
               />
             </div>
+
             <div>
-              <label class="block text-sm font-bold text-slate-700 mb-1"
+              <label
+                class="block text-[10px] font-bold text-slate-500 mb-1.5 ml-1 uppercase tracking-widest"
+                >ইমেইল এড্রেস</label
+              >
+              <input
+                type="email"
+                id="userEmail"
+                placeholder="example@mail.com"
+                required
+                class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition text-sm"
+              />
+            </div>
+
+            <div>
+              <label
+                class="block text-[10px] font-bold text-slate-500 mb-1.5 ml-1 uppercase tracking-widest"
                 >হোয়াটসঅ্যাপ নম্বর</label
               >
               <input
@@ -1317,31 +1450,46 @@
                 id="userPhone"
                 placeholder="01XXXXXXXXX"
                 required
-                class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 outline-none"
+                class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition text-sm"
               />
             </div>
+
             <div>
-              <label class="block text-sm font-bold text-slate-700 mb-1"
-                >TrxID</label
+              <label
+                class="block text-[10px] font-bold text-slate-500 mb-1.5 ml-1 uppercase tracking-widest"
+                >TrxID (ট্রানজেকশন আইডি)</label
               >
               <input
                 type="text"
                 id="trxId"
-                placeholder="উদাহরণ: AK89H..."
+                placeholder="Enter Transaction ID"
                 required
-                class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 outline-none"
+                class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition text-sm"
               />
             </div>
+
             <button
               type="submit"
-              class="w-full bg-blue-600 text-white font-black py-4 rounded-xl hover:bg-blue-700 transition"
+              class="w-full bg-white text-black font-black py-4 rounded-xl hover:bg-indigo-600 hover:text-white transition-all shadow-xl active:scale-95 text-lg mt-4"
             >
-              ভর্তি নিশ্চিত করুন 🚀
+              এনরোলমেন্ট সম্পন্ন করো ⚡
             </button>
           </form>
         </div>
       </div>
     </section>
+
+    <script>
+      function copyNumber(number, toastId) {
+        navigator.clipboard.writeText(number).then(() => {
+          const toast = document.getElementById(toastId);
+          toast.classList.remove("hidden");
+          setTimeout(() => {
+            toast.classList.add("hidden");
+          }, 2000);
+        });
+      }
+    </script>
 
     <!-- Enroll Section Ends Here -->
 
