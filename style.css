@@ -20,3 +20,68 @@ h3 {
 p {
   font-family: "Hind Siliguri", sans-serif;
 }
+
+
+/* Seamless Animated Border Button */
+.common-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2px; /* বর্ডারের থিকনেস */
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    z-index: 1;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* ঘুরন্ত কালার লেয়ার - Seamless Loop */
+.common-btn::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    /* কালারগুলো এমনভাবে সাজানো যাতে শুরু আর শেষ একই রঙ হয় */
+    background: conic-gradient(
+        #6366f1, 
+        #ec4899, 
+        #fbbf24, 
+        #6366f1
+    );
+    animation: rotate-border 2s linear infinite;
+    z-index: -2;
+}
+
+/* বাটনের ভেতরের মেইন বডি */
+.inner-content {
+    background: #05070a; /* আপনার ডার্ক ব্যাকগ্রাউন্ড */
+    color: white;
+    padding: 10px 28px;
+    border-radius: 9999px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+/* হোভার করলে গ্লো বাড়বে */
+.common-btn:hover {
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+    transform: scale(1.05);
+}
+
+.common-btn:hover .inner-content {
+    background: rgba(5, 7, 10, 0.8); /* হোভারে ভেতরটা হালকা স্বচ্ছ হবে */
+}
+
+@keyframes rotate-border {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

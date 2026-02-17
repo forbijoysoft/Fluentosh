@@ -22,119 +22,314 @@
   </head>
   <body class="body bg-slate-50 text-slate-900 overflow-x-hidden">
     <!-- Navbar Section Starts Here -->
-   <nav class="bg-[#05070a]/90 backdrop-blur-md sticky top-0 z-[100] border-b border-white/10">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-    
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-500/20">
-        F
-      </div>
-      <h1 class="text-2xl font-black text-white tracking-tighter">
-        FLUENTOSH
-      </h1>
-    </div>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="google" content="notranslate" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+        <style>
+          body {
+            font-family: "Plus_Jakarta_Sans", sans-serif;
+          }
 
-    <div class="hidden md:flex items-center gap-8">
-      <a href="#" class="text-slate-300 font-bold hover:text-white transition">Home</a>
-      
-      <div class="relative group">
-        <button class="flex items-center gap-1 text-slate-300 font-bold group-hover:text-white transition py-2">
-          Courses
-          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
-        <div class="absolute left-0 top-full mt-2 w-64 bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-4 z-50 overflow-hidden">
-          <a href="#" class="block px-6 py-4 text-sm text-slate-300 hover:bg-white/5 hover:text-white transition font-bold border-b border-white/5">Spoken English Bootcamp</a>
-          <a href="./Vocabulary_course/vocabulary.html" class="block px-6 py-4 text-sm text-slate-300 hover:bg-white/5 hover:text-white transition font-bold">Vocabulary Course</a>
-        </div>
-      </div>
+          @keyframes slideUp {
+            from {
+              opacity: 0;
+              transform: translateY(10px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .animate-slide-up {
+            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
 
-      <a onclick="openModal()" class="cursor-pointer bg-white text-black px-7 py-2.5 rounded-full font-black hover:bg-indigo-600 hover:text-white transition-all shadow-lg active:scale-95">
-        Enroll Now
-      </a>
-    </div>
+          /* Prevent scrolling when menu is open */
+          .no-scroll {
+            overflow: hidden;
+          }
+        </style>
+      </head>
+      <body class="bg-[#05070a]">
+        <nav class="bg-[#05070a] sticky top-0 z-[100] border-b border-white/10">
+          <div
+            class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-500/20"
+              >
+                F
+              </div>
+              <h1 class="text-2xl font-black text-white tracking-tighter">
+                FLUENTOSH
+              </h1>
+            </div>
 
-    <div class="md:hidden flex items-center">
-      <button id="mobile-menu-button" class="text-white focus:outline-none p-2 transition-transform active:scale-90">
-        <svg id="hamburger-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path id="menu-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
+            <div class="hidden md:flex items-center gap-8">
+              <a
+                href="./index.html"
+                class="text-slate-300 font-bold hover:text-white transition"
+                >Home</a
+              >
 
-  <div id="mobile-menu-drawer" class="hidden md:hidden bg-[#0f172a] border-b border-white/10 shadow-2xl overflow-hidden">
-    <div class="px-4 py-6 space-y-2 animate-slide-down">
-      
-      <a href="#" class="block text-xl font-bold text-white px-4 py-3 rounded-xl hover:bg-white/10 transition-all duration-300">
-        Home
-      </a>
-      
-      <div class="pt-2">
-        <p class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] px-4 mb-2">Our Courses</p>
-        <div class="space-y-1">
-          <a href="#" class="block text-lg font-bold text-slate-300 px-4 py-3 rounded-xl hover:bg-indigo-600/20 hover:text-indigo-400 transition-all duration-300">
-            Spoken English Bootcamp
-          </a>
-          <a href="./Vocabulary_course/vocabulary.html" class="block text-lg font-bold text-slate-300 px-4 py-3 rounded-xl hover:bg-indigo-600/20 hover:text-indigo-400 transition-all duration-300">
-            Vocabulary Course
-          </a>
-        </div>
-      </div>
-      
-      <div class="pt-6 px-4">
-        <a onclick="openModal(); toggleMobileMenu();" class="block w-full bg-gradient-to-r from-indigo-600 to-rose-600 text-white text-center py-4 rounded-2xl font-black text-lg shadow-xl active:scale-95">
-          Enroll Now 🚀
-        </a>
-      </div>
-    </div>
-  </div>
-</nav>
+              <div class="relative group">
+                <button
+                  class="flex items-center gap-1 text-slate-300 font-bold hover:text-white transition group-hover:text-white outline-none py-2"
+                >
+                  Courses
+                  <svg
+                    class="w-4 h-4 group-hover:rotate-180 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
 
-<style>
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-slide-down {
-    animation: slideDown 0.4s ease-out forwards;
-  }
-</style>
+                <div
+                  class="absolute top-full -left-4 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0"
+                >
+                  <div
+                    class="bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl p-3 backdrop-blur-xl"
+                  >
+                    <a
+                      href="./index.html"
+                      class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-800 transition-colors mt-1 group/item"
+                    >
+                      <div
+                        class="w-10 h-10 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center font-bold"
+                      >
+                        S
+                      </div>
+                      <div>
+                        <p class="text-white text-sm font-bold">
+                          Spoken Bootcamp
+                        </p>
+                        <p class="text-slate-500 text-[10px]">
+                          ইংরেজি বলা শিখুন সহজে
+                        </p>
+                      </div>
+                    </a>
+                    <a
+                      href="./Vocabulary_course/vocabulary.html"
+                      class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-800 transition-colors group/item"
+                    >
+                      <div
+                        class="w-10 h-10 bg-rose-500/10 text-rose-400 rounded-lg flex items-center justify-center font-bold"
+                      >
+                        V
+                      </div>
+                      <div>
+                        <p class="text-white text-sm font-bold">
+                          Vocabulary Course
+                        </p>
+                        <p class="text-slate-500 text-[10px]">
+                          শব্দভাণ্ডার বৃদ্ধির কোর্স
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
 
-<script>
-  (function() {
-    const menuBtn = document.getElementById('mobile-menu-button');
-    const menuDrawer = document.getElementById('mobile-menu-drawer');
-    const menuPath = document.getElementById('menu-path');
-    let isMenuOpen = false;
+              <a onclick="openModal()" class="common-btn">
+                <span class="inner-content"> Enroll Now ⚡ </span>
+              </a>
+            </div>
 
-    function toggleMobileMenu() {
-      isMenuOpen = !isMenuOpen;
-      
-      if (isMenuOpen) {
-        menuDrawer.classList.remove('hidden');
-        menuPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-      } else {
-        menuDrawer.classList.add('hidden');
-        menuPath.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
-      }
-    }
+            <div class="md:hidden flex items-center">
+              <button
+                id="mobile-menu-button"
+                class="text-white focus:outline-none p-2 relative z-[110]"
+              >
+                <svg
+                  id="hamburger-icon"
+                  class="w-8 h-8 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    id="menu-path"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
 
-    if(menuBtn) {
-      menuBtn.addEventListener('click', toggleMobileMenu);
-    }
-  })();
-</script>
+          <div
+            id="mobile-menu-drawer"
+            class="fixed inset-0 top-[72px] hidden md:hidden bg-[#05070a] z-[105] overflow-y-auto"
+          >
+            <div class="p-5 space-y-4 animate-slide-up">
+              <a
+                href="./index.html"
+                class="flex items-center gap-4 bg-slate-900/40 border border-white/5 p-5 rounded-3xl active:bg-indigo-600/20 transition-all group"
+              >
+                <div
+                  class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-2xl flex items-center justify-center group-active:scale-90 transition-transform"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h4 class="text-white font-bold text-lg">Home</h4>
+                  <p class="text-slate-500 text-xs">মূল পাতায় ফিরে যান</p>
+                </div>
+              </a>
+
+              <a
+                href="./index.html"
+                class="flex items-center gap-4 bg-slate-900/40 border border-white/5 p-5 rounded-3xl active:bg-emerald-600/20 transition-all group"
+              >
+                <div
+                  class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center group-active:scale-90 transition-transform"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h4 class="text-white font-bold text-lg">Spoken Bootcamp</h4>
+                  <p class="text-slate-500 text-xs">ইংরেজি বলা শিখুন সহজে</p>
+                </div>
+              </a>
+
+              <a
+                href="./Vocabulary_course/vocabulary.html"
+                class="flex items-center gap-4 bg-slate-900/40 border border-white/5 p-5 rounded-3xl active:bg-rose-600/20 transition-all group"
+              >
+                <div
+                  class="w-12 h-12 bg-rose-500/10 text-rose-400 rounded-2xl flex items-center justify-center group-active:scale-90 transition-transform"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h4 class="text-white font-bold text-lg">
+                    Vocabulary Course
+                  </h4>
+                  <p class="text-slate-500 text-xs">
+                    শব্দভাণ্ডার বৃদ্ধির কোর্স
+                  </p>
+                </div>
+              </a>
+
+              <div class="pt-6">
+                <a
+                  onclick="
+                    openModal();
+                    toggleMobileMenu();
+                  "
+                  class="block w-full bg-gradient-to-r from-indigo-600 to-rose-600 text-white text-center py-5 rounded-3xl font-black text-xl shadow-2xl active:scale-95 transition-all cursor-pointer"
+                >
+                  Enroll Now ⚡
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <script>
+          // Hamburger Menu Logic
+          const menuBtn = document.getElementById("mobile-menu-button");
+          const menuDrawer = document.getElementById("mobile-menu-drawer");
+          const menuPath = document.getElementById("menu-path");
+          const hamburgerIcon = document.getElementById("hamburger-icon");
+          let isMenuOpen = false;
+
+          function toggleMobileMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+              menuDrawer.classList.remove("hidden");
+              menuPath.setAttribute("d", "M6 18L18 6M6 6l12 12");
+              hamburgerIcon.classList.add("rotate-90");
+              document.body.classList.add("no-scroll");
+            } else {
+              menuDrawer.classList.add("hidden");
+              menuPath.setAttribute("d", "M4 6h16M4 12h16m-7 6h7");
+              hamburgerIcon.classList.remove("rotate-90");
+              document.body.classList.remove("no-scroll");
+            }
+          }
+
+          if (menuBtn) {
+            menuBtn.addEventListener("click", toggleMobileMenu);
+          }
+
+          // Placeholder function for Enroll Modal
+          function openModal() {
+            alert("Enrollment Form Opening...");
+          }
+
+          // Close menu if window is resized to Desktop
+          window.addEventListener("resize", () => {
+            if (window.innerWidth >= 768 && isMenuOpen) {
+              toggleMobileMenu();
+            }
+          });
+        </script>
+      </body>
+    </html>
 
     <!-- Navbar Section Ends Here -->
 
     <!-- Banner Section Starts Here -->
     <header
-      class="relative min-h-fit lg:min-h-[75vh] flex flex-col items-center justify-start bg-[#05070a] text-white pt-6 md:pt-10 pb-16 px-4 overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]"
+      class="relative min-h-fit lg:min-h-[85vh] flex flex-col items-center justify-start bg-[#05070a] text-white pt-6 md:pt-10 pb-16 px-4 overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]"
     >
       <div
-        class="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-indigo-600/15 rounded-full -translate-x-1/2 -translate-y-1/2 blur-[100px] md:blur-[140px]"
+        class="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-indigo-600/15 rounded-full -translate-x-1/2 -translate-y-1/2 blur-[100px] md:blur-[140px] animate-pulse"
       ></div>
       <div
         class="absolute bottom-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-blue-500/10 rounded-full translate-x-1/3 translate-y-1/3 blur-[100px] md:blur-[140px]"
@@ -142,26 +337,27 @@
 
       <div class="w-full max-w-7xl mx-auto text-center relative z-10 px-2">
         <h1
-          class="font-black tracking-tight flex flex-col items-center mt-2 md:mt-4"
+          class="font-black tracking-tight flex flex-col items-center mt-2 md:mt-4 overflow-hidden"
         >
           <span
-            class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-slate-300 leading-tight mb-1"
+            class="reveal-text text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-slate-300 leading-tight mb-1 opacity-0 translate-y-10 transition-all duration-700"
           >
-            শূণ্য থেকে শুরু করে হয়ে ওঠো
+            শূণ্য থেকে শুরু করে হয়ে ওঠো
           </span>
-
           <span
-            class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-orange-500 drop-shadow-[0_10px_20px_rgba(234,179,8,0.2)] leading-tight py-1"
+            class="reveal-text text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-orange-500 drop-shadow-[0_10px_20px_rgba(234,179,8,0.2)] leading-tight py-1 opacity-0 translate-y-10 transition-all duration-700 delay-200"
           >
             Confident Speaker
           </span>
         </h1>
 
-        <div class="mt-4 md:mt-6 mb-6 md:mb-8 max-w-5xl mx-auto">
+        <div
+          class="mt-4 md:mt-6 mb-6 md:mb-8 max-w-5xl mx-auto overflow-hidden"
+        >
           <p
-            class="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 leading-relaxed font-medium px-2"
+            class="reveal-text text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 leading-relaxed font-medium px-2 opacity-0 translate-y-10 transition-all duration-700 delay-400"
           >
-            ইংরেজি বলা কি পাহাড়সম কঠিন মনে হয়?
+            ইংরেজি বলা কি পাহাড়সম কঠিন মনে হয়?
             <span
               class="text-indigo-400 font-bold uppercase tracking-wider text-lg md:text-2xl"
               >১৫ দিনের</span
@@ -178,29 +374,31 @@
             <span class="text-white border-b border-indigo-500/30"
               >Oxford 3000 Vocabulary</span
             >
-            সবই শিখব, যেভাবে শিখলে Fluently ইংলিশে কথা বলা যায়।
+            সবই শিখব, যেভাবে শিখলে Fluently ইংলিশে কথা বলা যায়।
           </p>
 
-          <div class="mt-4 md:mt-6">
+          <div
+            class="mt-4 md:mt-6 reveal-text opacity-0 translate-y-10 transition-all duration-700 delay-500"
+          >
             <span
-              class="inline-block text-indigo-400 font-bold uppercase tracking-[0.15em] text-[10px] md:text-sm bg-indigo-500/5 px-4 py-2 rounded-full border border-indigo-500/10"
+              class="inline-block text-indigo-400 font-bold uppercase tracking-[0.15em] text-[10px] md:text-sm bg-indigo-500/5 px-4 py-2 rounded-full border border-indigo-500/10 animate-bounce"
             >
-              🚀 আপনার ফ্লুয়েন্সি মাত্র ১৫ দিনের দূরত্বে!
+              🚀 আপনার ফ্লুয়েন্সি মাত্র ১৫ দিনের দূরত্বে!
             </span>
           </div>
         </div>
 
         <div
-          class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-10"
+          class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-10 reveal-text opacity-0 translate-y-10 transition-all duration-700 delay-700"
         >
           <a
             onclick="openModal()"
-            class="sm:w-auto group relative cursor-pointer overflow-hidden rounded-2xl px-10 md:px-14 py-4 md:py-5 text-lg md:text-2xl font-black text-white transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(234,179,8,0.3)]"
+            id="main-cta-button"
+            class="sm:w-auto group relative cursor-pointer overflow-hidden rounded-2xl px-10 md:px-14 py-4 md:py-5 text-lg md:text-2xl font-black text-white transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(99,102,241,0.2)]"
           >
             <div
               class="absolute inset-0 bg-gradient-to-r from-[#a855f7] via-[#ec4899] to-[#f97316] transition-opacity duration-500"
             ></div>
-
             <div
               class="absolute inset-0 bg-gradient-to-r from-[#f59e0b] to-[#ea580c] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             ></div>
@@ -227,14 +425,70 @@
         </div>
       </div>
     </header>
+
+    <script>
+      // ১. নিচ থেকে ভেসে ওঠার এনিমেশন (Reveal Animation)
+      document.addEventListener("DOMContentLoaded", () => {
+        const reveals = document.querySelectorAll(".reveal-text");
+        reveals.forEach((el) => {
+          el.classList.remove("opacity-0", "translate-y-10");
+          el.classList.add("opacity-100", "translate-y-0");
+        });
+      });
+
+      // ২. কার্ড ফোকাস এনিমেশন (Intersection Observer)
+      // আপনার সাইটের যেকোনো কার্ডে 'focus-card' ক্লাসটি দিলে সেটি স্ক্রিনে আসলে কালারফুল হবে
+      const observerOptions = { threshold: 0.5 };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("focused-state");
+          }
+        });
+      }, observerOptions);
+
+      // সব কার্ড বা এলিমেন্ট ট্র্যাক করা
+      document
+        .querySelectorAll(".focus-card, #main-cta-button")
+        .forEach((card) => {
+          observer.observe(card);
+        });
+    </script>
+
+    <style>
+      /* ফোকাস হলে কালারফুল এনিমেশন */
+      .focused-state {
+        animation: colorfulGlow 1.5s ease-in-out forwards;
+      }
+
+      @keyframes colorfulGlow {
+        0% {
+          filter: grayscale(100%);
+          transform: scale(0.95);
+          opacity: 0.5;
+        }
+        100% {
+          filter: grayscale(0%);
+          transform: scale(1);
+          opacity: 1;
+          box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
+        }
+      }
+
+      /* স্মুথ ট্রানজিশন ক্লাস */
+      .reveal-text {
+        will-change: transform, opacity;
+      }
+    </style>
     <!-- Banner Section Ends Here -->
 
     <!-- Your Pera Our Solution Section Starts Here -->
     <section
-      class="bg-[#05070a] py-20 px-4 font-['Plus_Jakarta_Sans',sans-serif]"
+      class="bg-[#05070a] py-20 px-4 font-['Plus_Jakarta_Sans',sans-serif] overflow-hidden"
     >
       <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16 reveal-content">
           <h3
             class="text-white text-3xl md:text-5xl font-black uppercase tracking-tight flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4"
           >
@@ -246,40 +500,42 @@
             >
           </h3>
           <p class="text-slate-500 mt-4 text-sm md:text-lg">
-            ১৫ দিনের এই যাত্রায় আপনার ইংরেজি ভীতি হবে দূর
+            ১৫ দিনের এই যাত্রায় আপনার ইংরেজি ভীতি হবে দূর
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="flex flex-col items-center group">
+          <div
+            class="flex flex-col items-center group solution-card opacity-0 translate-y-20 transition-all duration-700"
+          >
             <div
-              class="w-full bg-[#1a0b12] border border-red-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center transition-all group-hover:border-red-500/50"
+              class="w-full bg-[#1a0b12] border border-red-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center transition-all duration-500 group-hover:border-red-500/50 card-inner-red grayscale opacity-60"
             >
               <span class="text-3xl mb-3">😒</span>
               <p class="text-red-100 text-sm leading-relaxed">
-                টেন্সের সব নিয়ম মুখস্থ করি, কিন্তু কথা বলার সময় সব তালগোল পাকিয়ে
-                ফেলি।
+                টেন্সের সব নিয়ম মুখস্থ করি, কিন্তু কথা বলার সময় সব তালগোল
+                পাকিয়ে ফেলি।
               </p>
             </div>
-
             <div
               class="h-12 w-px border-l-2 border-dotted border-slate-700"
             ></div>
-
             <div
-              class="w-full bg-[#061a18] border border-emerald-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center shadow-lg transition-all group-hover:border-emerald-500/50 shadow-emerald-950/20"
+              class="w-full bg-[#061a18] border border-emerald-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center shadow-lg transition-all duration-500 group-hover:border-emerald-500/50 card-inner-emerald grayscale opacity-60"
             >
               <span class="text-3xl mb-3">😀</span>
               <p class="text-emerald-100 text-sm leading-relaxed font-medium">
-                ১৫ দিনে টেন্সের প্র্যাকটিক্যাল প্রয়োগ শিখবেন, যা সারাজীবন মনে
+                ১৫ দিনে টেন্সের প্র্যাকটিক্যাল প্রয়োগ শিখবেন, যা সারাজীবন মনে
                 থাকবে।
               </p>
             </div>
           </div>
 
-          <div class="flex flex-col items-center group">
+          <div
+            class="flex flex-col items-center group solution-card opacity-0 translate-y-20 transition-all duration-700 delay-150"
+          >
             <div
-              class="w-full bg-[#1a0b12] border border-red-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center transition-all group-hover:border-red-500/50"
+              class="w-full bg-[#1a0b12] border border-red-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center transition-all duration-500 group-hover:border-red-500/50 card-inner-red grayscale opacity-60"
             >
               <span class="text-3xl mb-3">😒</span>
               <p class="text-red-100 text-sm leading-relaxed">
@@ -290,23 +546,25 @@
               class="h-12 w-px border-l-2 border-dotted border-slate-700"
             ></div>
             <div
-              class="w-full bg-[#061a18] border border-emerald-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center shadow-lg transition-all group-hover:border-emerald-500/50 shadow-emerald-950/20"
+              class="w-full bg-[#061a18] border border-emerald-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center shadow-lg transition-all duration-500 group-hover:border-emerald-500/50 card-inner-emerald grayscale opacity-60"
             >
               <span class="text-3xl mb-3">😀</span>
               <p class="text-emerald-100 text-sm leading-relaxed font-medium">
-                Auxiliary Verb-এর সঠিক ব্যবহার ও Oxford 3000 প্রয়োজনীয় শব্দ
+                Auxiliary Verb-এর সঠিক ব্যবহার ও Oxford 3000 প্রয়োজনীয় শব্দ
                 ভাণ্ডার।
               </p>
             </div>
           </div>
 
-          <div class="flex flex-col items-center group">
+          <div
+            class="flex flex-col items-center group solution-card opacity-0 translate-y-20 transition-all duration-700 delay-300"
+          >
             <div
-              class="w-full bg-[#1a0b12] border border-red-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center transition-all group-hover:border-red-500/50"
+              class="w-full bg-[#1a0b12] border border-red-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center transition-all duration-500 group-hover:border-red-500/50 card-inner-red grayscale opacity-60"
             >
               <span class="text-3xl mb-3">😒</span>
               <p class="text-red-100 text-sm leading-relaxed">
-                মাথায় অনেক আইডিয়া থাকে কিন্তু বাক্য তৈরি (Sentence Structure)
+                মাথায় অনেক আইডিয়া থাকে কিন্তু বাক্য তৈরি (Sentence Structure)
                 করতে পারি না।
               </p>
             </div>
@@ -314,41 +572,43 @@
               class="h-12 w-px border-l-2 border-dotted border-slate-700"
             ></div>
             <div
-              class="w-full bg-[#061a18] border border-emerald-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center shadow-lg transition-all group-hover:border-emerald-500/50 shadow-emerald-950/20"
+              class="w-full bg-[#061a18] border border-emerald-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center shadow-lg transition-all duration-500 group-hover:border-emerald-500/50 card-inner-emerald grayscale opacity-60"
             >
               <span class="text-3xl mb-3">😀</span>
               <p class="text-emerald-100 text-sm leading-relaxed font-medium">
-                সঠিক Sentence Making Structure শিখে বড় বড় বাক্য তৈরির ম্যাজিক
+                সঠিক Sentence Making Structure শিখে বড় বড় বাক্য তৈরির ম্যাজিক
                 ফর্মুলা।
               </p>
             </div>
           </div>
 
-          <div class="flex flex-col items-center group">
+          <div
+            class="flex flex-col items-center group solution-card opacity-0 translate-y-20 transition-all duration-700 delay-[450ms]"
+          >
             <div
-              class="w-full bg-[#1a0b12] border border-red-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center transition-all group-hover:border-red-500/50"
+              class="w-full bg-[#1a0b12] border border-red-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center transition-all duration-500 group-hover:border-red-500/50 card-inner-red grayscale opacity-60"
             >
               <span class="text-3xl mb-3">😒</span>
               <p class="text-red-100 text-sm leading-relaxed">
-                সবই বুঝি কিন্তু মুখ দিয়ে ইংরেজি বের হয় না, জড়তা কাজ করে।
+                সবই বুঝি কিন্তু মুখ দিয়ে ইংরেজি বের হয় না, জড়তা কাজ করে।
               </p>
             </div>
             <div
               class="h-12 w-px border-l-2 border-dotted border-slate-700"
             ></div>
             <div
-              class="w-full bg-[#061a18] border border-emerald-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center shadow-lg transition-all group-hover:border-emerald-500/50 shadow-emerald-950/20"
+              class="w-full bg-[#061a18] border border-emerald-900/30 p-6 rounded-2xl text-center min-h-[160px] flex flex-col justify-center items-center shadow-lg transition-all duration-500 group-hover:border-emerald-500/50 card-inner-emerald grayscale opacity-60"
             >
               <span class="text-3xl mb-3">😀</span>
               <p class="text-emerald-100 text-sm leading-relaxed font-medium">
-                ইনটেনসিভ স্পিকিং ড্রিল যা আপনার মুখের জড়তা কাটিয়ে ফ্লুয়েন্সি
+                ইনটেনসিভ স্পিকিং ড্রিল যা আপনার মুখের জড়তা কাটিয়ে ফ্লুয়েন্সি
                 আনবে।
               </p>
             </div>
           </div>
         </div>
 
-        <div class="mt-16 text-center">
+        <div class="mt-16 text-center reveal-content">
           <div class="inline-flex flex-col items-center">
             <p
               class="text-indigo-300 font-bold tracking-widest text-xs md:text-sm uppercase bg-indigo-500/10 px-6 py-2 rounded-full border border-indigo-500/20"
@@ -362,6 +622,47 @@
         </div>
       </div>
     </section>
+
+    <style>
+      /* ফোকাসে আসলে কালারফুল হওয়ার স্টাইল */
+      .is-focused .card-inner-red {
+        filter: grayscale(0%);
+        opacity: 1;
+        border-color: rgba(153, 27, 27, 0.5);
+      }
+      .is-focused .card-inner-emerald {
+        filter: grayscale(0%);
+        opacity: 1;
+        border-color: rgba(6, 95, 70, 0.5);
+      }
+      .is-focused.solution-card {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          threshold: 0.2,
+        };
+
+        const solutionObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-focused");
+            }
+          });
+        }, observerOptions);
+
+        // কার্ডগুলো এবং টাইটেল অবজার্ভ করা
+        document
+          .querySelectorAll(".solution-card, .reveal-content")
+          .forEach((el) => {
+            solutionObserver.observe(el);
+          });
+      });
+    </script>
     <!-- Your Pera Our Solution Section Ends Here -->
 
     <!-- Course X-factors Section Starts Here -->
@@ -373,7 +674,9 @@
       ></div>
 
       <div class="max-w-7xl mx-auto relative z-10">
-        <div class="text-center mb-20">
+        <div
+          class="text-center mb-20 x-factor-header opacity-0 translate-y-10 transition-all duration-1000"
+        >
           <h2
             class="text-3xl md:text-6xl font-black text-white flex flex-col md:flex-row justify-center items-center gap-4"
           >
@@ -389,19 +692,18 @@
             </span>
           </h2>
           <p class="text-slate-500 mt-6 text-lg max-w-2xl mx-auto">
-            কেন এই ১৫ দিনের যাত্রা আপনার জীবনের সেরা লার্নিং এক্সপেরিয়েন্স হতে
+            কেন এই ১৫ দিনের যাত্রা আপনার জীবনের সেরা লার্নিং এক্সপেরিয়েন্স হতে
             যাচ্ছে?
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            class="group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 hover:border-indigo-500/50 transition-all duration-500 relative overflow-hidden"
+            class="x-factor-card group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 transition-all duration-700 relative overflow-hidden opacity-0 translate-y-20"
           >
             <div
               class="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-colors"
             ></div>
-
             <span
               class="bg-indigo-500/10 text-indigo-400 text-xs font-bold px-4 py-1.5 rounded-full border border-indigo-500/20"
               >লার্নিং মেথড</span
@@ -413,8 +715,8 @@
                 স্মার্ট স্পিকিং ড্রিল
               </h3>
               <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                শুধু গ্রামার নয়, আমরা ফোকাস করি সরাসরি কথা বলায়। আমাদের বিশেষ
-                'রিপিটেশন মেথড' আপনার জড়তা কাটাতে ম্যাজিকের মতো কাজ করবে।
+                শুধু গ্রামার নয়, আমরা ফোকাস করি সরাসরি কথা বলায়। আমাদের বিশেষ
+                'রিপিটেশন মেথড' আপনার জড়তা কাটাতে ম্যাজিকের মতো কাজ করবে।
               </p>
               <div
                 class="flex justify-end opacity-20 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0"
@@ -429,12 +731,11 @@
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 hover:border-purple-500/50 transition-all duration-500 relative overflow-hidden"
+            class="x-factor-card group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 transition-all duration-700 delay-150 relative overflow-hidden opacity-0 translate-y-20"
           >
             <div
               class="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-colors"
             ></div>
-
             <span
               class="bg-purple-500/10 text-purple-400 text-xs font-bold px-4 py-1.5 rounded-full border border-purple-500/20"
               >গাইডেন্স</span
@@ -446,8 +747,8 @@
                 ১:১ মেন্টর সাপোর্ট
               </h3>
               <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                আপনার কোথায় ভুল হচ্ছে তা ধরিয়ে দিতে থাকবে ডেডিকেটেড মেন্টর
-                সাপোর্ট। সরাসরি প্রশ্ন করে যেকোনো কনফিউশন ক্লিয়ার করার সুযোগ।
+                আপনার কোথায় ভুল হচ্ছে তা ধরিয়ে দিতে থাকবে ডেডিকেটেড মেন্টর
+                সাপোর্ট। সরাসরি প্রশ্ন করে যেকোনো কনফিউশন ক্লিয়ার করার সুযোগ।
               </p>
               <div
                 class="flex justify-end opacity-20 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0"
@@ -462,12 +763,11 @@
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 hover:border-emerald-500/50 transition-all duration-500 relative overflow-hidden"
+            class="x-factor-card group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 transition-all duration-700 delay-300 relative overflow-hidden opacity-0 translate-y-20"
           >
             <div
               class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-colors"
             ></div>
-
             <span
               class="bg-emerald-500/10 text-emerald-400 text-xs font-bold px-4 py-1.5 rounded-full border border-emerald-500/20"
               >রিসোর্স</span
@@ -479,9 +779,8 @@
                 Oxford 3000™ Vocab
               </h3>
               <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                অপ্রয়োজনীয় শব্দ বাদ দিয়ে অক্সফোর্ডের সবচেয়ে গুরুত্বপূর্ণ ৩০০০
-                শব্দ ও তার প্রয়োগ আমরা শিখব, যা আপনার ফ্লুয়েন্সি বাড়াতে
-                অপরিহার্য।
+                অপ্রয়োজনীয় শব্দ বাদ দিয়ে অক্সফোর্ডের সবচেয়ে গুরুত্বপূর্ণ
+                ৩০০০ শব্দ ও তার প্রয়োগ আমরা শিখব।
               </p>
               <div
                 class="flex justify-end opacity-20 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0"
@@ -496,12 +795,11 @@
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 hover:border-orange-500/50 transition-all duration-500 relative overflow-hidden"
+            class="x-factor-card group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 transition-all duration-700 delay-[450ms] relative overflow-hidden opacity-0 translate-y-20"
           >
             <div
               class="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl group-hover:bg-orange-500/20 transition-colors"
             ></div>
-
             <span
               class="bg-orange-500/10 text-orange-400 text-xs font-bold px-4 py-1.5 rounded-full border border-orange-500/20"
               >কমিউনিটি</span
@@ -513,8 +811,8 @@
                 ২৪/৭ সাপোর্ট গ্রুপ
               </h3>
               <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                শেখার জন্য পরিবেশ সবচেয়ে জরুরি। আমাদের প্রাইভেট গ্রুপে সহপাঠীদের
-                সাথে প্র্যাকটিস এবং মেন্টরদের সার্বক্ষণিক সাহায্য পাবেন।
+                আমাদের প্রাইভেট গ্রুপে সহপাঠীদের সাথে প্র্যাকটিস এবং মেন্টরদের
+                সার্বক্ষণিক সাহায্য পাবেন।
               </p>
               <div
                 class="flex justify-end opacity-20 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0"
@@ -529,12 +827,11 @@
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 hover:border-cyan-500/50 transition-all duration-500 relative overflow-hidden"
+            class="x-factor-card group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 transition-all duration-700 delay-[600ms] relative overflow-hidden opacity-0 translate-y-20"
           >
             <div
               class="absolute -top-10 -right-10 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-colors"
             ></div>
-
             <span
               class="bg-cyan-500/10 text-cyan-400 text-xs font-bold px-4 py-1.5 rounded-full border border-cyan-500/20"
               >ফ্রেমওয়ার্ক</span
@@ -546,8 +843,8 @@
                 গাইডেড জার্নি
               </h3>
               <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                ABCD থেকে শুরু করে Tense এবং Sentence Structure—সবকিছু একটি
-                নির্দিষ্ট ১৫ দিনের রোডম্যাপ অনুযায়ী শেখানো হবে।
+                Tense এবং Sentence Structure—সবকিছু একটি নির্দিষ্ট ১৫ দিনের
+                রোডম্যাপ অনুযায়ী শিখুন।
               </p>
               <div
                 class="flex justify-end opacity-20 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0"
@@ -562,12 +859,11 @@
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 hover:border-rose-500/50 transition-all duration-500 relative overflow-hidden"
+            class="x-factor-card group bg-slate-900/40 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/5 transition-all duration-700 delay-[750ms] relative overflow-hidden opacity-0 translate-y-20"
           >
             <div
               class="absolute -top-10 -right-10 w-32 h-32 bg-rose-500/10 rounded-full blur-3xl group-hover:bg-rose-500/20 transition-colors"
             ></div>
-
             <span
               class="bg-rose-500/10 text-rose-400 text-xs font-bold px-4 py-1.5 rounded-full border border-rose-500/20"
               >ফলাফল</span
@@ -579,8 +875,8 @@
                 কনফিডেন্স গ্যারান্টি
               </h3>
               <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                গাইডলাইন ফলো করলে ১৫ দিন শেষে আপনি নিজেই নিজের পার্থক্য বুঝতে
-                পারবেন। ইংরেজি ভীতি কাটিয়ে হয়ে উঠবেন কনফিডেন্ট স্পিকার।
+                ১৫ দিন শেষে আপনি নিজেই পার্থক্য বুঝবেন। ইংরেজি ভীতি কাটিয়ে হয়ে
+                উঠবেন ফ্লুয়েন্ট স্পিকার।
               </p>
               <div
                 class="flex justify-end opacity-20 group-hover:opacity-100 transition duration-500 grayscale group-hover:grayscale-0"
@@ -596,6 +892,68 @@
         </div>
       </div>
     </section>
+
+    <style>
+      /* ফোকাসড কার্ডের জন্য ডাইনামিক বর্ডার ও শ্যাডো */
+      .x-factor-card.is-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      /* কার্ডের বর্ডার কালার ফোকাস সিস্টেম */
+      .x-factor-card.is-visible:nth-child(1) {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+      }
+      .x-factor-card.is-visible:nth-child(2) {
+        border-color: rgba(168, 85, 247, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.2);
+      }
+      .x-factor-card.is-visible:nth-child(3) {
+        border-color: rgba(16, 185, 129, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
+      }
+      .x-factor-card.is-visible:nth-child(4) {
+        border-color: rgba(249, 115, 22, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.2);
+      }
+      .x-factor-card.is-visible:nth-child(5) {
+        border-color: rgba(6, 182, 212, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.2);
+      }
+      .x-factor-card.is-visible:nth-child(6) {
+        border-color: rgba(244, 63, 94, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.2);
+      }
+
+      .x-factor-header.is-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          threshold: 0.15,
+        };
+
+        const xFactorObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            }
+          });
+        }, observerOptions);
+
+        // টাইটেল এবং সব কার্ড অবজার্ভ করা
+        document
+          .querySelectorAll(".x-factor-card, .x-factor-header")
+          .forEach((el) => {
+            xFactorObserver.observe(el);
+          });
+      });
+    </script>
     <!-- Course X-factors Section Ends Here -->
 
     <!-- 4 steps to success Section Starts Here -->
@@ -603,9 +961,11 @@
       class="py-24 bg-[#05070a] px-4 font-['Plus_Jakarta_Sans',sans-serif] relative overflow-hidden"
     >
       <div class="max-w-7xl mx-auto relative z-10">
-        <div class="text-center mb-20">
+        <div
+          class="text-center mb-20 step-reveal-header opacity-0 translate-y-10 transition-all duration-1000"
+        >
           <h2 class="text-3xl md:text-6xl font-black text-white leading-tight">
-            সাফল্য পাওয়ার
+            সাফল্য পাওয়ার
             <span class="relative inline-block px-4">
               <span class="relative z-10 text-white italic">৪টি সহজ ধাপ</span>
               <span
@@ -617,16 +977,17 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div
-            class="group bg-slate-900/40 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/5 transition-all duration-500 hover:bg-indigo-600/10 hover:border-indigo-500/40 hover:-translate-y-3 relative overflow-hidden text-center"
+            class="step-card group bg-slate-900/40 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/5 transition-all duration-700 relative overflow-hidden text-center opacity-0 translate-y-20"
           >
             <div
-              class="text-7xl font-black text-white/5 absolute -top-2 left-1/2 -translate-x-1/2 group-hover:text-indigo-500/20 transition-colors duration-500"
+              class="absolute top-6 right-8 text-4xl font-black text-white/10 step-number transition-all duration-700"
             >
               01
             </div>
+
             <div class="relative z-10">
               <div
-                class="w-16 h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500"
+                class="step-icon-box w-16 h-16 bg-indigo-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-700 grayscale opacity-40"
               >
                 <svg
                   class="w-8 h-8 text-indigo-400"
@@ -644,25 +1005,26 @@
               </div>
               <h3 class="text-2xl font-bold mb-4 text-white">ভর্তি হও</h3>
               <p
-                class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+                class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 step-text"
               >
-                দ্রুত জয়েন করে নাও আমাদের ১৫ দিনের স্পেশাল বুটক্যাম্পে। আজই
-                তোমার ফ্লুয়েন্সির যাত্রা শুরু করো।
+                দ্রুত জয়েন করে নাও আমাদের ১৫ দিনের স্পেশাল বুটক্যাম্পে। আজই
+                তোমার ফ্লুয়েন্সির যাত্রা শুরু করো।
               </p>
             </div>
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/5 transition-all duration-500 hover:bg-purple-600/10 hover:border-purple-500/40 hover:-translate-y-3 relative overflow-hidden text-center"
+            class="step-card group bg-slate-900/40 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/5 transition-all duration-700 delay-150 relative overflow-hidden text-center opacity-0 translate-y-20"
           >
             <div
-              class="text-7xl font-black text-white/5 absolute -top-2 left-1/2 -translate-x-1/2 group-hover:text-purple-500/20 transition-colors duration-500"
+              class="absolute top-6 right-8 text-4xl font-black text-white/10 step-number transition-all duration-700"
             >
               02
             </div>
+
             <div class="relative z-10">
               <div
-                class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500"
+                class="step-icon-box w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-700 grayscale opacity-40"
               >
                 <svg
                   class="w-8 h-8 text-purple-400"
@@ -680,25 +1042,26 @@
               </div>
               <h3 class="text-2xl font-bold mb-4 text-white">গাইডলাইন নাও</h3>
               <p
-                class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+                class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 step-text"
               >
-                আমাদের এক্সপার্ট সাপোর্ট ও গাইডেন্স নিয়ে ১৫ দিনের রোডম্যাপটি
-                মনোযোগ দিয়ে অনুসরণ করো।
+                আমাদের এক্সপার্ট সাপোর্ট ও গাইডেন্স নিয়ে ১৫ দিনের রোডম্যাপটি
+                মনোযোগ দিয়ে অনুসরণ করো।
               </p>
             </div>
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/5 transition-all duration-500 hover:bg-emerald-600/10 hover:border-emerald-500/40 hover:-translate-y-3 relative overflow-hidden text-center"
+            class="step-card group bg-slate-900/40 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/5 transition-all duration-700 delay-300 relative overflow-hidden text-center opacity-0 translate-y-20"
           >
             <div
-              class="text-7xl font-black text-white/5 absolute -top-2 left-1/2 -translate-x-1/2 group-hover:text-emerald-500/20 transition-colors duration-500"
+              class="absolute top-6 right-8 text-4xl font-black text-white/10 step-number transition-all duration-700"
             >
               03
             </div>
+
             <div class="relative z-10">
               <div
-                class="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500"
+                class="step-icon-box w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-700 grayscale opacity-40"
               >
                 <svg
                   class="w-8 h-8 text-emerald-400"
@@ -716,25 +1079,26 @@
               </div>
               <h3 class="text-2xl font-bold mb-4 text-white">কোর্স শেষ করো</h3>
               <p
-                class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+                class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 step-text"
               >
                 প্রতিটি স্পিকিং ড্রিল এবং ক্লাস শেষ করো। নিজেকে একজন
-                আত্মবিশ্বাসী স্পিকার হিসেবে গড়ে তোলো।
+                আত্মবিশ্বাসী স্পিকার হিসেবে গড়ে তোলো।
               </p>
             </div>
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/5 transition-all duration-500 hover:bg-orange-600/10 hover:border-orange-500/40 hover:-translate-y-3 relative overflow-hidden text-center"
+            class="step-card group bg-slate-900/40 backdrop-blur-sm p-10 rounded-[2.5rem] border border-white/5 transition-all duration-700 delay-[450ms] relative overflow-hidden text-center opacity-0 translate-y-20"
           >
             <div
-              class="text-7xl font-black text-white/5 absolute -top-2 left-1/2 -translate-x-1/2 group-hover:text-orange-500/20 transition-colors duration-500"
+              class="absolute top-6 right-8 text-4xl font-black text-white/10 step-number transition-all duration-700"
             >
               04
             </div>
+
             <div class="relative z-10">
               <div
-                class="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500"
+                class="step-icon-box w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-700 grayscale opacity-40"
               >
                 <svg
                   class="w-8 h-8 text-orange-400"
@@ -754,17 +1118,17 @@
                 কথা বলা শুরু করো
               </h3>
               <p
-                class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+                class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 step-text"
               >
-                জড়তা কাটিয়ে সবার সামনে সাবলীলভাবে ইংরেজি বলা শুরু করো এবং সফলতার
-                পথে এগিয়ে যাও।
+                জড়তা কাটিয়ে সবার সামনে সাবলীলভাবে ইংরেজি বলা শুরু করো এবং
+                সফলতার পথে এগিয়ে যাও।
               </p>
             </div>
           </div>
         </div>
 
         <div
-          class="mt-20 flex flex-col md:flex-row justify-center items-center gap-6"
+          class="mt-20 flex flex-col md:flex-row justify-center items-center gap-6 step-reveal-buttons opacity-0 translate-y-10 transition-all duration-1000"
         >
           <a
             onclick="openModal()"
@@ -775,7 +1139,6 @@
             ></div>
             <span class="relative z-10">এখনই এনরোল করো 🚀</span>
           </a>
-
           <button
             class="bg-transparent border-2 border-slate-700 text-slate-300 px-10 py-4 rounded-xl font-bold text-xl hover:bg-white hover:text-black hover:border-white transition-all duration-300"
           >
@@ -784,14 +1147,92 @@
         </div>
       </div>
     </section>
+
+    <style>
+      .is-active.step-card {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      /* কোণার নাম্বারিং ফোকাস ইফেক্ট */
+      .is-active.step-card .step-number {
+        opacity: 0.3 !important;
+        transform: scale(1.2);
+        color: inherit; /* থিম কালার অনুযায়ী জ্বলে উঠবে */
+      }
+
+      .is-active.step-card .step-icon-box {
+        filter: grayscale(0%) !important;
+        opacity: 1 !important;
+        transform: scale(1.1);
+      }
+
+      /* কার্ড ভিত্তিক বর্ডার ও গ্লো */
+      .is-active.step-card:nth-child(1) {
+        border-color: rgba(99, 102, 241, 0.4);
+      }
+      .is-active.step-card:nth-child(1) .step-number {
+        color: #6366f1;
+      }
+
+      .is-active.step-card:nth-child(2) {
+        border-color: rgba(168, 85, 247, 0.4);
+      }
+      .is-active.step-card:nth-child(2) .step-number {
+        color: #a855f7;
+      }
+
+      .is-active.step-card:nth-child(3) {
+        border-color: rgba(16, 185, 129, 0.4);
+      }
+      .is-active.step-card:nth-child(3) .step-number {
+        color: #10b981;
+      }
+
+      .is-active.step-card:nth-child(4) {
+        border-color: rgba(249, 115, 22, 0.4);
+      }
+      .is-active.step-card:nth-child(4) .step-number {
+        color: #f97316;
+      }
+
+      .is-active.step-reveal-header,
+      .is-active.step-reveal-buttons {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = { threshold: 0.2 };
+        const stepObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-active");
+            }
+          });
+        }, observerOptions);
+
+        document
+          .querySelectorAll(
+            ".step-card, .step-reveal-header, .step-reveal-buttons",
+          )
+          .forEach((el) => {
+            stepObserver.observe(el);
+          });
+      });
+    </script>
     <!-- 4 steps to success Section Ends Here -->
 
     <!-- What You Will Learn Section Starts Here -->
     <section
-      class="py-24 bg-[#05070a] px-4 font-['Plus_Jakarta_Sans',sans-serif] relative"
+      class="py-24 bg-[#05070a] px-4 font-['Plus_Jakarta_Sans',sans-serif] relative overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-20">
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div
+          class="text-center mb-20 curriculum-header opacity-0 translate-y-10 transition-all duration-1000"
+        >
           <h2 class="text-3xl md:text-6xl font-black text-white">
             তুমি কী
             <span
@@ -806,183 +1247,183 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div
-            class="group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-orange-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+            class="curriculum-card group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 transition-all duration-700 hover:-translate-y-2 shadow-2xl opacity-0 translate-y-10"
           >
             <div
-              class="w-14 h-14 mb-6 bg-orange-500/10 rounded-2xl flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-500"
+              class="curr-icon-box w-14 h-14 mb-6 bg-orange-500/10 rounded-2xl flex items-center justify-center transition-all duration-700 grayscale opacity-40"
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/3894/3894531.png"
                 alt="Be Verb"
-                class="w-8 invert group-hover:invert-0"
+                class="w-8 invert transition-all duration-700"
               />
             </div>
             <h3 class="text-2xl font-bold mb-4 text-white tracking-tight">
               Be-Verb Mastery
             </h3>
             <p
-              class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+              class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 card-text"
             >
-              Am, Is, Are, Was, Were-এর সঠিক ব্যবহারের মাধ্যমে নিজের পরিচয় ও
+              Am, Is, Are, Was, Were-এর সঠিক ব্যবহারের মাধ্যমে নিজের পরিচয় ও
               বর্তমান-অতীত অবস্থা বর্ণনা।
             </p>
           </div>
 
           <div
-            class="group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+            class="curriculum-card group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 transition-all duration-700 delay-75 hover:-translate-y-2 shadow-2xl opacity-0 translate-y-10"
           >
             <div
-              class="w-14 h-14 mb-6 bg-blue-500/10 rounded-2xl flex items-center justify-center group-hover:bg-blue-500 transition-colors duration-500"
+              class="curr-icon-box w-14 h-14 mb-6 bg-blue-500/10 rounded-2xl flex items-center justify-center transition-all duration-700 grayscale opacity-40"
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png"
                 alt="Tense"
-                class="w-8 invert group-hover:invert-0"
+                class="w-8 invert transition-all duration-700"
               />
             </div>
             <h3 class="text-2xl font-bold mb-4 text-white tracking-tight">
               Tense Magic
             </h3>
             <p
-              class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+              class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 card-text"
             >
-              মুখস্থ নয়, বরং প্র্যাকটিক্যাল ড্রিলের মাধ্যমে Present, Past ও
+              মুখস্থ নয়, বরং প্র্যাকটিক্যাল ড্রিলের মাধ্যমে Present, Past ও
               Future Tense-এ কথা বলার সহজ টেকনিক।
             </p>
           </div>
 
           <div
-            class="group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-yellow-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+            class="curriculum-card group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 transition-all duration-700 delay-150 hover:-translate-y-2 shadow-2xl opacity-0 translate-y-10"
           >
             <div
-              class="w-14 h-14 mb-6 bg-yellow-500/10 rounded-2xl flex items-center justify-center group-hover:bg-yellow-500 transition-colors duration-500"
+              class="curr-icon-box w-14 h-14 mb-6 bg-yellow-500/10 rounded-2xl flex items-center justify-center transition-all duration-700 grayscale opacity-40"
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/2618/2618245.png"
                 alt="Structure"
-                class="w-8 invert group-hover:invert-0"
+                class="w-8 invert transition-all duration-700"
               />
             </div>
             <h3 class="text-2xl font-bold mb-4 text-white tracking-tight">
               Sentence Structure
             </h3>
             <p
-              class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+              class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 card-text"
             >
-              বড় বড় বাক্য তৈরির ম্যাজিক ফর্মুলা এবং Auxiliary Verb-এর নির্ভুল
-              প্রয়োগ পদ্ধতি।
+              বড় বড় বাক্য তৈরির ম্যাজিক ফর্মুলা এবং Auxiliary Verb-এর নির্ভুল
+              প্রয়োগ পদ্ধতি।
             </p>
           </div>
 
           <div
-            class="group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-cyan-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+            class="curriculum-card group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 transition-all duration-700 delay-[225ms] hover:-translate-y-2 shadow-2xl opacity-0 translate-y-10"
           >
             <div
-              class="w-14 h-14 mb-6 bg-cyan-500/10 rounded-2xl flex items-center justify-center group-hover:bg-cyan-500 transition-colors duration-500"
+              class="curr-icon-box w-14 h-14 mb-6 bg-cyan-500/10 rounded-2xl flex items-center justify-center transition-all duration-700 grayscale opacity-40"
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/1157/1157000.png"
                 alt="Vocab"
-                class="w-8 invert group-hover:invert-0"
+                class="w-8 invert transition-all duration-700"
               />
             </div>
             <h3 class="text-2xl font-bold mb-4 text-white tracking-tight">
               Oxford 3000™
             </h3>
             <p
-              class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+              class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 card-text"
             >
-              সবচেয়ে প্রয়োজনীয় ৩০০০ ইংরেজি শব্দের সঠিক উচ্চারণ ও বাক্যে
-              ব্যবহারের রিয়েল লাইফ মেথড।
+              সবচেয়ে প্রয়োজনীয় ৩০০০ ইংরেজি শব্দের সঠিক উচ্চারণ ও বাক্যে
+              ব্যবহারের রিয়েল লাইফ মেথড।
             </p>
           </div>
 
           <div
-            class="group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-green-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+            class="curriculum-card group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 transition-all duration-700 delay-300 hover:-translate-y-2 shadow-2xl opacity-0 translate-y-10"
           >
             <div
-              class="w-14 h-14 mb-6 bg-green-500/10 rounded-2xl flex items-center justify-center group-hover:bg-green-500 transition-colors duration-500"
+              class="curr-icon-box w-14 h-14 mb-6 bg-green-500/10 rounded-2xl flex items-center justify-center transition-all duration-700 grayscale opacity-40"
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/4201/4201961.png"
                 alt="Preposition"
-                class="w-8 invert group-hover:invert-0"
+                class="w-8 invert transition-all duration-700"
               />
             </div>
             <h3 class="text-2xl font-bold mb-4 text-white tracking-tight">
               Preposition Fix
             </h3>
             <p
-              class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+              class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 card-text"
             >
-              In, On, At বা To নিয়ে সব কনফিউশন চিরতরে দূর করার জন্য বিশেষ
+              In, On, At বা To নিয়ে সব কনফিউশন চিরতরে দূর করার জন্য বিশেষ
               ডেডিকেটেড সেশন।
             </p>
           </div>
 
           <div
-            class="group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+            class="curriculum-card group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 transition-all duration-700 delay-[375ms] hover:-translate-y-2 shadow-2xl opacity-0 translate-y-10"
           >
             <div
-              class="w-14 h-14 mb-6 bg-red-500/10 rounded-2xl flex items-center justify-center group-hover:bg-red-500 transition-colors duration-500"
+              class="curr-icon-box w-14 h-14 mb-6 bg-red-500/10 rounded-2xl flex items-center justify-center transition-all duration-700 grayscale opacity-40"
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/1189/1189132.png"
                 alt="Speaking"
-                class="w-8 invert group-hover:invert-0"
+                class="w-8 invert transition-all duration-700"
               />
             </div>
             <h3 class="text-2xl font-bold mb-4 text-white tracking-tight">
               Intensive Drills
             </h3>
             <p
-              class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+              class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 card-text"
             >
-              মুখের জড়তা কাটানোর জন্য কয়েক হাজার বার স্পিকিং প্র্যাকটিস বা ওরাল
-              ড্রিল সেশন।
+              মুখের জড়তা কাটানোর জন্য কয়েক হাজার বার স্পিকিং প্র্যাকটিস বা
+              ওরাল ড্রিল সেশন।
             </p>
           </div>
 
           <div
-            class="group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+            class="curriculum-card group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 transition-all duration-700 delay-[450ms] hover:-translate-y-2 shadow-2xl opacity-0 translate-y-10"
           >
             <div
-              class="w-14 h-14 mb-6 bg-indigo-500/10 rounded-2xl flex items-center justify-center group-hover:bg-indigo-500 transition-colors duration-500"
+              class="curr-icon-box w-14 h-14 mb-6 bg-indigo-500/10 rounded-2xl flex items-center justify-center transition-all duration-700 grayscale opacity-40"
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/2961/2961234.png"
                 alt="Daily"
-                class="w-8 invert group-hover:invert-0"
+                class="w-8 invert transition-all duration-700"
               />
             </div>
             <h3 class="text-2xl font-bold mb-4 text-white tracking-tight">
               Real Life Conv.
             </h3>
             <p
-              class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+              class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 card-text"
             >
-              অফিস, ইন্টারভিউ বা আড্ডায় যেভাবে ন্যাচারাল ভাবে কথা বলতে হয় তার
+              অফিস, ইন্টারভিউ বা আড্ডায় যেভাবে ন্যাচারাল ভাবে কথা বলতে হয় তার
               হ্যান্ডস-অন ট্রেনিং।
             </p>
           </div>
 
           <div
-            class="group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-emerald-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
+            class="curriculum-card group p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 transition-all duration-700 delay-[525ms] hover:-translate-y-2 shadow-2xl opacity-0 translate-y-10"
           >
             <div
-              class="w-14 h-14 mb-6 bg-emerald-500/10 rounded-2xl flex items-center justify-center group-hover:bg-emerald-500 transition-colors duration-500"
+              class="curr-icon-box w-14 h-14 mb-6 bg-emerald-500/10 rounded-2xl flex items-center justify-center transition-all duration-700 grayscale opacity-40"
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/512/1903/1903162.png"
                 alt="Final"
-                class="w-8 invert group-hover:invert-0"
+                class="w-8 invert transition-all duration-700"
               />
             </div>
             <h3 class="text-2xl font-bold mb-4 text-white tracking-tight">
               Final Mastery
             </h3>
             <p
-              class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200"
+              class="text-slate-400 text-sm leading-relaxed transition-colors duration-500 card-text"
             >
               ১৫ দিন শেষে লাইভ প্রেজেন্টেশনের মাধ্যমে নিজের আত্মবিশ্বাস সবার
               সামনে প্রমাণের সুযোগ।
@@ -991,6 +1432,115 @@
         </div>
       </div>
     </section>
+
+    <style>
+      /* ১. কার্ড স্ক্রিনে আসার পর এনিমেশন */
+      .curriculum-card.is-active {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      /* ২. আইকন কালার ও ইনভার্ট ফিক্স */
+      .curriculum-card.is-active .curr-icon-box {
+        filter: grayscale(0%) !important;
+        opacity: 1 !important;
+        transform: scale(1.05);
+      }
+
+      /* ৩. আইকনের ইনভার্ট সরিয়ে রঙিন করা */
+      .curriculum-card.is-active .curr-icon-box img {
+        filter: invert(0) !important;
+      }
+
+      /* ৪. কার্ড অনুযায়ী আলাদা গ্লো বর্ডার */
+      .curriculum-card.is-active:nth-child(1) {
+        border-color: rgba(249, 115, 22, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.15);
+      }
+      .curriculum-card.is-active:nth-child(1) .curr-icon-box {
+        background: #f97316;
+      }
+
+      .curriculum-card.is-active:nth-child(2) {
+        border-color: rgba(59, 130, 246, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
+      }
+      .curriculum-card.is-active:nth-child(2) .curr-icon-box {
+        background: #3b82f6;
+      }
+
+      .curriculum-card.is-active:nth-child(3) {
+        border-color: rgba(234, 179, 8, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(234, 179, 8, 0.15);
+      }
+      .curriculum-card.is-active:nth-child(3) .curr-icon-box {
+        background: #eab308;
+      }
+
+      .curriculum-card.is-active:nth-child(4) {
+        border-color: rgba(6, 182, 212, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.15);
+      }
+      .curriculum-card.is-active:nth-child(4) .curr-icon-box {
+        background: #06b6d4;
+      }
+
+      .curriculum-card.is-active:nth-child(5) {
+        border-color: rgba(34, 197, 94, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.15);
+      }
+      .curriculum-card.is-active:nth-child(5) .curr-icon-box {
+        background: #22c55e;
+      }
+
+      .curriculum-card.is-active:nth-child(6) {
+        border-color: rgba(239, 68, 68, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(239, 68, 68, 0.15);
+      }
+      .curriculum-card.is-active:nth-child(6) .curr-icon-box {
+        background: #ef4444;
+      }
+
+      .curriculum-card.is-active:nth-child(7) {
+        border-color: rgba(79, 70, 229, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.15);
+      }
+      .curriculum-card.is-active:nth-child(7) .curr-icon-box {
+        background: #4f46e5;
+      }
+
+      .curriculum-card.is-active:nth-child(8) {
+        border-color: rgba(16, 185, 129, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.15);
+      }
+      .curriculum-card.is-active:nth-child(8) .curr-icon-box {
+        background: #10b981;
+      }
+
+      .curriculum-header.is-active {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = { threshold: 0.15 };
+        const curriculumObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-active");
+            }
+          });
+        }, observerOptions);
+
+        document
+          .querySelectorAll(".curriculum-card, .curriculum-header")
+          .forEach((el) => {
+            curriculumObserver.observe(el);
+          });
+      });
+    </script>
     <!-- What You Will Learn Section Ends Here -->
 
     <!-- Your all questions about this bootcamp starts here -->
@@ -998,7 +1548,9 @@
       class="py-24 bg-[#05070a] px-4 font-['Plus_Jakarta_Sans',sans-serif] relative overflow-hidden"
     >
       <div class="max-w-4xl mx-auto relative z-10">
-        <div class="text-center mb-16">
+        <div
+          class="text-center mb-16 faq-header opacity-0 translate-y-10 transition-all duration-1000"
+        >
           <h2 class="text-3xl md:text-6xl font-black text-white leading-tight">
             তোমার <span class="text-rose-500 italic">যত প্রশ্ন</span>
             <br />
@@ -1010,10 +1562,10 @@
 
         <div class="space-y-4">
           <div
-            class="group bg-slate-900/40 backdrop-blur-md rounded-[2rem] border border-white/5 overflow-hidden transition-all duration-300 hover:border-indigo-500/30"
+            class="faq-item group bg-slate-900/40 backdrop-blur-md rounded-[2rem] border border-white/5 overflow-hidden transition-all duration-300 hover:border-indigo-500/30 opacity-0 translate-y-10"
           >
             <button
-              class="faq-btn w-full px-8 py-7 flex items-center justify-between text-left"
+              class="faq-btn w-full px-8 py-7 flex items-center justify-between text-left outline-none"
             >
               <div class="flex items-center gap-6">
                 <span
@@ -1026,10 +1578,10 @@
                 >
               </div>
               <div
-                class="faq-icon-container w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-indigo-600 transition-all"
+                class="faq-icon-container w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-indigo-600 transition-all duration-300"
               >
                 <span
-                  class="faq-icon text-2xl text-slate-400 group-hover:text-white"
+                  class="faq-icon text-2xl text-slate-400 group-hover:text-white transition-transform duration-300"
                   >+</span
                 >
               </div>
@@ -1040,19 +1592,19 @@
               <div
                 class="px-8 md:px-20 pb-8 text-slate-400 leading-relaxed text-base"
               >
-                যারা একদম শূন্য থেকে শুরু করতে চায় এবং স্পোকেন ইংলিশের বেসিক
+                যারা একদম শূন্য থেকে শুরু করতে চায় এবং স্পোকেন ইংলিশের বেসিক
                 (Be-Verb, Tense, Sentence Structure) শক্ত করে কথা বলা শুরু করতে
-                চায়, তাদের জন্যই এই ১৫ দিনের স্পেশাল বুটক্যাম্প। তুমি স্টুডেন্ট
+                চায়, তাদের জন্যই এই ১৫ দিনের স্পেশাল বুটক্যাম্প। তুমি স্টুডেন্ট
                 হও বা প্রফেশনাল, সবার জন্যই এটি সমান কার্যকর।
               </div>
             </div>
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-md rounded-[2rem] border border-white/5 overflow-hidden transition-all duration-300 hover:border-purple-500/30"
+            class="faq-item group bg-slate-900/40 backdrop-blur-md rounded-[2rem] border border-white/5 overflow-hidden transition-all duration-300 hover:border-purple-500/30 opacity-0 translate-y-10"
           >
             <button
-              class="faq-btn w-full px-8 py-7 flex items-center justify-between text-left"
+              class="faq-btn w-full px-8 py-7 flex items-center justify-between text-left outline-none"
             >
               <div class="flex items-center gap-6">
                 <span
@@ -1065,10 +1617,10 @@
                 >
               </div>
               <div
-                class="faq-icon-container w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-purple-600 transition-all"
+                class="faq-icon-container w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-purple-600 transition-all duration-300"
               >
                 <span
-                  class="faq-icon text-2xl text-slate-400 group-hover:text-white"
+                  class="faq-icon text-2xl text-slate-400 group-hover:text-white transition-transform duration-300"
                   >+</span
                 >
               </div>
@@ -1079,8 +1631,8 @@
               <div
                 class="px-8 md:px-20 pb-8 text-slate-400 leading-relaxed text-base"
               >
-                ১৫ দিনে আমরা আপনাকে সম্পূর্ণ ইংরেজি শিখিয়ে দেব না, তবে আমরা
-                আপনার ইংরেজি বলার 'জড়তা' এবং 'ভয়' দূর করব। আমাদের বিশেষ 'ওরাল
+                ১৫ দিনে আমরা আপনাকে সম্পূর্ণ ইংরেজি শিখিয়ে দেব না, তবে আমরা
+                আপনার ইংরেজি বলার 'জড়তা' এবং 'ভয়' দূর করব। আমাদের বিশেষ 'ওরাল
                 ড্রিল' মেথড ফলো করলে ১৫ দিন শেষে আপনি নিজে নিজেই শত শত বাক্য
                 তৈরি করে অনর্গল বলতে পারবেন।
               </div>
@@ -1088,10 +1640,10 @@
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-md rounded-[2rem] border border-white/5 overflow-hidden transition-all duration-300 hover:border-emerald-500/30"
+            class="faq-item group bg-slate-900/40 backdrop-blur-md rounded-[2rem] border border-white/5 overflow-hidden transition-all duration-300 hover:border-emerald-500/30 opacity-0 translate-y-10"
           >
             <button
-              class="faq-btn w-full px-8 py-7 flex items-center justify-between text-left"
+              class="faq-btn w-full px-8 py-7 flex items-center justify-between text-left outline-none"
             >
               <div class="flex items-center gap-6">
                 <span
@@ -1104,10 +1656,10 @@
                 >
               </div>
               <div
-                class="faq-icon-container w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-emerald-600 transition-all"
+                class="faq-icon-container w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-emerald-600 transition-all duration-300"
               >
                 <span
-                  class="faq-icon text-2xl text-slate-400 group-hover:text-white"
+                  class="faq-icon text-2xl text-slate-400 group-hover:text-white transition-transform duration-300"
                   >+</span
                 >
               </div>
@@ -1119,18 +1671,18 @@
                 class="px-8 md:px-20 pb-8 text-slate-400 leading-relaxed text-base"
               >
                 হ্যাঁ, প্রতিটি সেশন সরাসরি লাইভ হবে। লাইভ মিস করলে পরদিন
-                পোর্টালে রেকর্ডেড ভার্সন পেয়ে যাবে। তবে সরাসরি প্রশ্ন করার জন্য
-                লাইভ ক্লাসে থাকাটাই সবচেয়ে ভালো। সাথে থাকছে মেন্টরদের ১:১
+                পোর্টালে রেকর্ডেড ভার্সন পেয়ে যাবে। তবে সরাসরি প্রশ্ন করার জন্য
+                লাইভ ক্লাসে থাকাটাই সবচেয়ে ভালো। সাথে থাকছে মেন্টরদের ১:১
                 সাপোর্ট।
               </div>
             </div>
           </div>
 
           <div
-            class="group bg-slate-900/40 backdrop-blur-md rounded-[2rem] border border-white/5 overflow-hidden transition-all duration-300 hover:border-orange-500/30"
+            class="faq-item group bg-slate-900/40 backdrop-blur-md rounded-[2rem] border border-white/5 overflow-hidden transition-all duration-300 hover:border-orange-500/30 opacity-0 translate-y-10"
           >
             <button
-              class="faq-btn w-full px-8 py-7 flex items-center justify-between text-left"
+              class="faq-btn w-full px-8 py-7 flex items-center justify-between text-left outline-none"
             >
               <div class="flex items-center gap-6">
                 <span
@@ -1139,14 +1691,14 @@
                 >
                 <span
                   class="text-lg md:text-xl font-bold text-slate-200 group-hover:text-white transition-colors"
-                  >সার্টিফিকেট কি পাওয়া যাবে?</span
+                  >সার্টিফিকেট কি পাওয়া যাবে?</span
                 >
               </div>
               <div
-                class="faq-icon-container w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-orange-600 transition-all"
+                class="faq-icon-container w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-orange-600 transition-all duration-300"
               >
                 <span
-                  class="faq-icon text-2xl text-slate-400 group-hover:text-white"
+                  class="faq-icon text-2xl text-slate-400 group-hover:text-white transition-transform duration-300"
                   >+</span
                 >
               </div>
@@ -1165,23 +1717,91 @@
         </div>
       </div>
     </section>
+
+    <style>
+      /* ১. স্ক্রল এনিমেশন স্টেট */
+      .faq-header.is-active,
+      .faq-item.is-active {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      /* ২. একটিভ Accordion স্টাইল */
+      .faq-item.active {
+        border-color: rgba(99, 102, 241, 0.4);
+        background: rgba(15, 23, 42, 0.8);
+      }
+
+      .faq-item.active .faq-icon {
+        transform: rotate(45deg);
+        color: white;
+      }
+
+      .faq-item.active .faq-icon-container {
+        background-color: rgb(79, 70, 229); /* Indigo for active state */
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // এনিমেশন অবজার্ভার
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-active");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document
+          .querySelectorAll(".faq-header, .faq-item")
+          .forEach((el) => observer.observe(el));
+
+        // Accordion লজিক
+        const faqButtons = document.querySelectorAll(".faq-btn");
+
+        faqButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const currentItem = btn.parentElement;
+            const answer = currentItem.querySelector(".faq-answer");
+            const isActive = currentItem.classList.contains("active");
+
+            // সব আইটেম আগে বন্ধ করা (যাতে একবারে একটিই খোলা থাকে)
+            document.querySelectorAll(".faq-item").forEach((item) => {
+              item.classList.remove("active");
+              item.querySelector(".faq-answer").style.maxHeight = null;
+            });
+
+            // যদি আগে থেকে একটিভ না থাকে, তবে ওপেন করা
+            if (!isActive) {
+              currentItem.classList.add("active");
+              answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+          });
+        });
+      });
+    </script>
     <!-- your all questions ends here -->
 
     <!-- তাহলে আর দেরি কেন করবেন? Section Starts Here -->
     <section
-      class="py-24 bg-[#05070a] px-4 font-['Plus_Jakarta_Sans',sans-serif]"
+      class="py-24 bg-[#05070a] px-4 font-['Plus_Jakarta_Sans',sans-serif] relative overflow-hidden"
     >
       <div class="max-w-7xl mx-auto">
         <div
-          class="relative bg-slate-900/30 rounded-[2rem] md:rounded-[3rem] p-8 md:p-24 overflow-hidden text-center border border-white/10 shadow-[0_0_50px_-12px_rgba(79,70,229,0.2)] group transition-all duration-700 hover:border-indigo-500/30"
+          class="cta-container relative bg-slate-900/30 rounded-[2rem] md:rounded-[3rem] p-8 md:p-24 overflow-hidden text-center border border-white/10 shadow-[0_0_50px_-12px_rgba(79,70,229,0.2)] group transition-all duration-700 hover:border-indigo-500/30 opacity-0 translate-y-10"
         >
           <div
-            class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700"
+            class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
             style="
               background-image: radial-gradient(#6366f1 1px, transparent 1px);
               background-size: 40px 40px;
             "
           ></div>
+
           <div
             class="absolute -bottom-24 -left-24 w-[20rem] md:w-[30rem] h-[20rem] md:h-[30rem] bg-indigo-600/20 blur-[120px] rounded-full group-hover:bg-indigo-600/30 transition-all duration-700"
           ></div>
@@ -1193,7 +1813,7 @@
             <h2
               class="text-3xl md:text-6xl font-black text-white mb-6 md:mb-8 tracking-tight"
             >
-              তাহলে আর দেরি <span class="text-rose-500">কেন?</span>
+              তাহলে আর দেরি <span class="text-rose-500 italic">কেন?</span>
             </h2>
 
             <h3
@@ -1204,6 +1824,7 @@
                 class="bg-gradient-to-r from-indigo-400 via-purple-500 to-rose-500 text-transparent bg-clip-text"
                 >স্পোকেন ইংলিশ,</span
               >
+              <br class="hidden md:block" />
               <span class="text-white">বদলে ফেলো নিজের</span>
               <span
                 class="bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text italic"
@@ -1214,10 +1835,10 @@
             <p
               class="text-slate-400 max-w-3xl mx-auto text-base md:text-xl leading-relaxed mb-10 md:mb-14 px-2"
             >
-              প্রযুক্তির এই যুগে ইংরেজি জানা মানে শুধু একটি স্কিল নয়, এটি একটি
-              স্ট্রং ক্যারিয়ার গড়ার চাবিকাঠি।
+              প্রযুক্তির এই যুগে ইংরেজি জানা মানে শুধু একটি স্কিল নয়, এটি একটি
+              স্ট্রং ক্যারিয়ার গড়ার চাবিকাঠি।
               <span
-                class="text-white font-bold italic underline decoration-indigo-500"
+                class="text-white font-bold italic underline decoration-indigo-500 decoration-2"
                 >Fluentosh</span
               >
               বুটক্যাম্পে তুমি পাবে ১৫ দিনের ইনটেনসিভ ওরাল ড্রিলস।
@@ -1265,12 +1886,55 @@
                   clip-rule="evenodd"
                 ></path>
               </svg>
-              সীমিত সময়ের জন্য ডিসকাউন্ট অফার চলছে!
+              সীমিত সময়ের জন্য ডিসকাউন্ট অফার চলছে!
             </p>
           </div>
         </div>
       </div>
     </section>
+
+    <style>
+      /* ইন্টারসেকশন অবজারভার এনিমেশন */
+      .cta-container.is-active {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1.05);
+        }
+      }
+
+      .animate-pulse {
+        animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-active");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document
+          .querySelectorAll(".cta-container")
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
     <!-- তাহলে আর দেরি কেন করবেন? Section Ends Here -->
 
     <!-- Enroll Section Starts Here -->
@@ -1543,35 +2207,45 @@
 
     <!-- Footer Section Starts Here -->
     <footer
-      class="bg-[#05070a] pt-20 pb-10 px-6 border-t border-white/5 font-['Plus_Jakarta_Sans',sans-serif]"
+      class="bg-[#05070a] pt-20 pb-10 px-6 border-t border-white/5 font-['Plus_Jakarta_Sans',sans-serif] relative overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"
+      ></div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           <div class="lg:col-span-4 space-y-8">
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 group cursor-pointer">
               <div
-                class="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-[0_0_20px_rgba(79,70,229,0.4)]"
+                class="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-[0_0_20px_rgba(79,70,229,0.4)] group-hover:rotate-12 transition-transform duration-500"
               >
                 F
               </div>
-              <h2 class="text-3xl font-black text-white tracking-tighter">
+              <h2
+                class="text-3xl font-black text-white tracking-tighter group-hover:text-indigo-400 transition-colors"
+              >
                 FLUENTOSH
               </h2>
             </div>
 
             <div class="space-y-4 text-slate-400">
-              <div class="flex items-start gap-4">
+              <div
+                class="flex items-start gap-4 hover:text-slate-200 transition-colors cursor-default"
+              >
                 <span
-                  class="w-6 h-6 bg-slate-800 rounded-full flex items-center justify-center text-xs text-indigo-400 italic"
+                  class="w-8 h-8 bg-slate-800/50 rounded-full flex items-center justify-center text-sm shadow-inner"
                   >📍</span
                 >
                 <p class="text-sm leading-relaxed">
-                  Level-4, 34, Awal Centre, Banani, Dhaka
+                  Level-4, 34, Awal Centre,<br />Banani, Dhaka
                 </p>
               </div>
-              <div class="flex items-center gap-4">
+              <div
+                class="flex items-center gap-4 hover:text-slate-200 transition-colors cursor-pointer"
+              >
                 <span
-                  class="w-6 h-6 bg-slate-800 rounded-full flex items-center justify-center text-xs text-indigo-400"
+                  class="w-8 h-8 bg-slate-800/50 rounded-full flex items-center justify-center text-sm shadow-inner"
                   >✉️</span
                 >
                 <p class="text-sm">web@fluentosh-english.com</p>
@@ -1579,10 +2253,10 @@
             </div>
 
             <div
-              class="bg-slate-900/50 p-6 rounded-[2rem] border border-white/5 flex items-center gap-5 max-w-xs group hover:border-indigo-500/30 transition-all duration-500"
+              class="bg-slate-900/50 backdrop-blur-sm p-6 rounded-[2rem] border border-white/5 flex items-center gap-5 max-w-xs group hover:border-indigo-500/30 transition-all duration-500 shadow-xl"
             >
               <div
-                class="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform"
+                class="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500"
               >
                 <svg
                   class="w-6 h-6"
@@ -1600,12 +2274,18 @@
               </div>
               <div>
                 <p
-                  class="text-[10px] text-slate-500 font-bold uppercase tracking-widest"
+                  class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em]"
                 >
-                  যেকোন জিজ্ঞাসায়
+                  যেকোন জিজ্ঞাসায়
                 </p>
-                <p class="text-xl font-black text-white">01332-502004</p>
-                <p class="text-[10px] text-indigo-400">Sat-Thu, 10 AM - 7 PM</p>
+                <p
+                  class="text-xl font-black text-white group-hover:text-indigo-400 transition-colors"
+                >
+                  01332-502004
+                </p>
+                <p class="text-[10px] text-indigo-400/80">
+                  Sat-Thu, 10 AM - 7 PM
+                </p>
               </div>
             </div>
           </div>
@@ -1615,27 +2295,37 @@
               <h3 class="text-white font-bold mb-6 text-lg">লিঙ্কসমূহ</h3>
               <ul class="space-y-4 text-slate-400 text-sm font-medium">
                 <li>
-                  <a href="#" class="hover:text-indigo-400 transition-all"
+                  <a
+                    href="#"
+                    class="hover:text-indigo-400 hover:translate-x-1 inline-block transition-all"
                     >About Us</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="hover:text-indigo-400 transition-all"
+                  <a
+                    href="#"
+                    class="hover:text-indigo-400 hover:translate-x-1 inline-block transition-all"
                     >Success Page</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="hover:text-indigo-400 transition-all"
+                  <a
+                    href="#"
+                    class="hover:text-indigo-400 hover:translate-x-1 inline-block transition-all"
                     >Our Blog</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="hover:text-indigo-400 transition-all"
+                  <a
+                    href="#"
+                    class="hover:text-indigo-400 hover:translate-x-1 inline-block transition-all"
                     >Refund Policy</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="hover:text-indigo-400 transition-all"
+                  <a
+                    href="#"
+                    class="hover:text-indigo-400 hover:translate-x-1 inline-block transition-all"
                     >Privacy Policy</a
                   >
                 </li>
@@ -1648,72 +2338,84 @@
                   <a
                     href="#"
                     class="flex items-center gap-3 hover:text-indigo-400 transition-all group"
-                    ><img
+                  >
+                    <img
                       src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                      class="w-5 h-5 invert opacity-50 group-hover:opacity-100 group-hover:invert-0"
+                      class="w-5 h-5 invert opacity-50 group-hover:opacity-100 group-hover:invert-0 transition-all"
                       alt="FB"
-                    />ফেসবুক</a
-                  >
+                    />
+                    ফেসবুক
+                  </a>
                 </li>
                 <li>
                   <a
                     href="#"
                     class="flex items-center gap-3 hover:text-indigo-400 transition-all group"
-                    ><img
+                  >
+                    <img
                       src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                      class="w-5 h-5 invert opacity-50 group-hover:opacity-100 group-hover:invert-0"
+                      class="w-5 h-5 invert opacity-50 group-hover:opacity-100 group-hover:invert-0 transition-all"
                       alt="IG"
-                    />ইনস্ট্রাগ্রাম</a
-                  >
+                    />
+                    ইনস্ট্রাগ্রাম
+                  </a>
                 </li>
                 <li>
                   <a
                     href="#"
                     class="flex items-center gap-3 hover:text-indigo-400 transition-all group"
-                    ><img
+                  >
+                    <img
                       src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
-                      class="w-5 h-5 invert opacity-50 group-hover:opacity-100 group-hover:invert-0"
+                      class="w-5 h-5 invert opacity-50 group-hover:opacity-100 group-hover:invert-0 transition-all"
                       alt="YT"
-                    />ইউটিউব</a
-                  >
+                    />
+                    ইউটিউব
+                  </a>
                 </li>
                 <li>
                   <a
                     href="#"
                     class="flex items-center gap-3 hover:text-indigo-400 transition-all group"
-                    ><img
-                      src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-                      class="w-5 h-5 invert opacity-50 group-hover:opacity-100 group-hover:invert-0"
-                      alt="IN"
-                    />লিঙ্কডইন</a
                   >
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                      class="w-5 h-5 invert opacity-50 group-hover:opacity-100 group-hover:invert-0 transition-all"
+                      alt="IN"
+                    />
+                    লিঙ্কডইন
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div
-            class="lg:col-span-4 flex flex-col items-center lg:items-end text-center lg:text-right"
-          >
+          <div class="lg:col-span-4 flex flex-col items-center lg:items-end">
             <h3 class="text-white font-bold mb-6 text-lg">অ্যাপ ডাউনলোড করো</h3>
             <div class="space-y-4 w-full max-w-[180px]">
-              <a href="#" class="hover:scale-105 transition-transform block">
+              <a
+                href="#"
+                class="group block overflow-hidden rounded-xl border border-white/10 hover:border-indigo-500/50 transition-all"
+              >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                   alt="App Store"
-                  class="w-full h-auto border border-white/10 rounded-lg"
-                />
-              </a>
-              <a href="#" class="hover:scale-105 transition-transform block">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                  alt="Google Play"
-                  class="w-full h-auto border border-white/10 rounded-lg"
+                  class="w-full h-auto group-hover:scale-105 transition-transform duration-500"
                 />
               </a>
               <a
                 href="#"
-                class="bg-black/40 border border-white/10 hover:border-white/30 text-white p-3 rounded-xl flex items-center justify-center gap-3 transition-all hover:scale-105"
+                class="group block overflow-hidden rounded-xl border border-white/10 hover:border-indigo-500/50 transition-all"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Google Play"
+                  class="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                />
+              </a>
+              <a
+                href="#"
+                class="bg-white/5 border border-white/10 hover:border-white/30 text-white p-3 rounded-xl flex items-center justify-center gap-3 transition-all hover:scale-105 group"
               >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
@@ -1722,7 +2424,11 @@
                 />
                 <div class="text-left leading-tight">
                   <p class="text-[8px] uppercase opacity-60">Get it from</p>
-                  <p class="text-sm font-bold">Microsoft</p>
+                  <p
+                    class="text-sm font-bold group-hover:text-indigo-400 transition-colors"
+                  >
+                    Microsoft
+                  </p>
                 </div>
               </a>
             </div>
@@ -1732,12 +2438,19 @@
         <div
           class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs font-medium"
         >
-          <p>&copy; 2026 Fluentosh. All rights reserved.</p>
+          <p>
+            &copy; 2026 <span class="text-slate-400 font-bold">Fluentosh</span>.
+            All rights reserved.
+          </p>
           <div class="flex gap-6">
-            <a href="#" class="hover:text-white transition-colors"
+            <a
+              href="#"
+              class="hover:text-white hover:underline underline-offset-4 transition-all"
               >Terms of Service</a
             >
-            <a href="#" class="hover:text-white transition-colors"
+            <a
+              href="#"
+              class="hover:text-white hover:underline underline-offset-4 transition-all"
               >Cookie Policy</a
             >
           </div>
