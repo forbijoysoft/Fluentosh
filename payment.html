@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <title>Enrollment - Fluentosh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#05070a] flex items-center justify-center min-h-screen p-4">
+
+    <section
+      id="enroll-modal"
+      class="relative max-w-2xl w-full bg-[#0f172a] rounded-[2rem] shadow-2xl overflow-hidden border border-white/10 flex flex-col md:flex-row max-h-[95vh] overflow-y-auto"
+    >
+      <button
+        onclick="window.location.href='../index.html'"
+        class="absolute top-4 right-4 text-slate-400 hover:text-white z-20 bg-slate-800/80 rounded-full p-1.5 transition"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+
+      <div
+        class="md:w-[45%] bg-indigo-600 p-8 text-white flex flex-col justify-center"
+      >
+        <div class="mb-6">
+          <span
+            class="bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider"
+            >স্পেশাল অফার</span
+          >
+          <h3 class="text-4xl font-black mt-2 leading-tight">
+            ৳২৯৯ <span class="text-lg font-medium opacity-80">মাত্র</span>
+          </h3>
+        </div>
+
+        <p class="text-sm text-indigo-100 mb-8 leading-relaxed">
+          নিচের নম্বরটিতে
+          <span class="font-bold underline text-white">Send Money</span> করো।
+          নম্বরটির ওপর ক্লিক করলেই কপি হয়ে যাবে।
+        </p>
+
+        <div class="space-y-4">
+          <div
+            onclick="copyNumber('01891554173', 'bkash-toast')"
+            class="relative cursor-pointer bg-white/10 p-4 rounded-2xl border border-white/20 hover:bg-white/20 transition-all active:scale-95 group"
+          >
+            <p class="text-[11px] uppercase tracking-widest opacity-70 mb-1">
+              বিকাশ (Personal)
+            </p>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-mono font-black tracking-wider">
+                01891554173
+              </p>
+              <svg
+                class="w-5 h-5 opacity-50 group-hover:opacity-100"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7v8a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2h-6a2 2 0 00-2 2z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h6a2 2 0 002-2v-3"
+                ></path>
+              </svg>
+            </div>
+            <span
+              id="bkash-toast"
+              class="absolute -top-2 right-2 bg-emerald-500 text-[10px] px-2 py-1 rounded hidden animate-bounce"
+              >Copied!</span
+            >
+          </div>
+
+          <div
+            onclick="copyNumber('01891554173', 'nagad-toast')"
+            class="relative cursor-pointer bg-white/10 p-4 rounded-2xl border border-white/20 hover:bg-white/20 transition-all active:scale-95 group"
+          >
+            <p class="text-[11px] uppercase tracking-widest opacity-70 mb-1">
+              নগদ (Personal)
+            </p>
+            <div class="flex items-center justify-between">
+              <p class="text-xl font-mono font-black tracking-wider">
+                01891554173
+              </p>
+              <svg
+                class="w-5 h-5 opacity-50 group-hover:opacity-100"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7v8a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2h-6a2 2 0 00-2 2z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h6a2 2 0 002-2v-3"
+                ></path>
+              </svg>
+            </div>
+            <span
+              id="nagad-toast"
+              class="absolute -top-2 right-2 bg-emerald-500 text-[10px] px-2 py-1 rounded hidden animate-bounce"
+              >Copied!</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="md:w-[55%] p-8 bg-slate-900">
+        <h4 class="text-white font-bold mb-6 flex items-center gap-2">
+          <span
+            class="w-6 h-6 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center text-xs"
+            >✔</span
+          >
+          পেমেন্টের তথ্য দাও
+        </h4>
+        <form id="bootcampForm" class="space-y-4">
+          <div>
+            <label
+              class="block text-[10px] font-bold text-slate-500 mb-1.5 ml-1 uppercase tracking-widest"
+              >আপনার পূর্ণ নাম</label
+            >
+            <input
+              type="text"
+              id="userName"
+              placeholder="Type your name"
+              required
+              class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition text-sm"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-bold text-slate-500 mb-1.5 ml-1 uppercase tracking-widest"
+              >ইমেইল এড্রেস</label
+            >
+            <input
+              type="email"
+              id="userEmail"
+              placeholder="example@mail.com"
+              required
+              class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition text-sm"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-bold text-slate-500 mb-1.5 ml-1 uppercase tracking-widest"
+              >হোয়াটসঅ্যাপ নম্বর</label
+            >
+            <input
+              type="tel"
+              id="userPhone"
+              placeholder="01XXXXXXXXX"
+              required
+              class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition text-sm"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block text-[10px] font-bold text-slate-500 mb-1.5 ml-1 uppercase tracking-widest"
+              >TrxID (ট্রানজেকশন আইডি)</label
+            >
+            <input
+              type="text"
+              id="trxId"
+              placeholder="Enter Transaction ID"
+              required
+              class="w-full bg-slate-800/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition text-sm"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-white text-black font-black py-4 rounded-xl hover:bg-indigo-600 hover:text-white transition-all shadow-xl active:scale-95 text-lg mt-4"
+          >
+            এনরোলমেন্ট সম্পন্ন করো ⚡
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      function copyNumber(number, toastId) {
+        navigator.clipboard.writeText(number).then(() => {
+          const toast = document.getElementById(toastId);
+          toast.classList.remove("hidden");
+          setTimeout(() => {
+            toast.classList.add("hidden");
+          }, 2000);
+        });
+      }
+
+      // এনরোল সম্পন্ন বাটনে ক্লিক করলে success.html এ নিয়ে যাবে
+      document.getElementById('bootcampForm').addEventListener('submit', function(e) {
+          e.preventDefault(); // ফর্ম ডেটা প্রসেসিং এর জন্য ডিফল্ট বিহেভিয়ার আটকানো
+          window.location.href = "success.html"; 
+      });
+    </script>
+
+</body>
+</html>
