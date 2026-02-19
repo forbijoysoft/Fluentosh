@@ -1,63 +1,69 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google" content="notranslate" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>TenseMaster Bootcamp</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #05070a; }
-        .completed-card { border-color: #10b981 !important; background-color: rgba(16, 185, 129, 0.05) !important; }
-        .rev-active { border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.05) !important; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #05070a; 
+            overflow-x: hidden; /* বডি লেভেলে ডানে-বামে স্ক্রল বন্ধ */
+            width: 100%;
+        }
+        .completed-card { border-color: #10b981 !important; background-color: rgba(16, 185, 129, 0.08) !important; }
+        .rev-active { border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08) !important; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
+        
+        .vocab-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            word-wrap: break-word; /* লম্বা শব্দ কার্ডের বাইরে যাবে না */
+        }
     </style>
 </head>
 <body class="text-slate-300 antialiased">
 
-    <!-- navbar start here -->
-    <nav class="sticky top-0 z-50 bg-[#05070a]/95 backdrop-blur-md border-b border-slate-800/60 p-3">
+    <nav class="sticky top-0 z-50 bg-[#05070a]/95 backdrop-blur-md border-b border-slate-800/60 p-4">
         <div class="max-w-7xl mx-auto flex flex-col gap-3">
             <div class="flex items-center justify-between gap-2">
                 
-                <div class="flex items-center gap-1.5 bg-slate-900/80 p-1.5 rounded-xl border border-slate-800/50">
+                <div class="flex items-center gap-1 bg-slate-900/80 p-1.5 rounded-xl border border-slate-800/50">
                     <div class="px-2 py-0.5 text-center">
-                        <span class="text-[8px] font-bold text-slate-500 uppercase block leading-none">Done</span>
-                        <span id="doneStat" class="text-xs font-bold text-emerald-500">0</span>
+                        <span class="text-[9px] font-bold text-slate-500 uppercase block leading-none mb-1">Done</span>
+                        <span id="doneStat" class="text-xs font-black text-emerald-500">0</span>
                     </div>
-                    <div class="w-[1px] h-4 bg-slate-800"></div>
+                    <div class="w-[1px] h-5 bg-slate-800"></div>
                     <div class="px-2 py-0.5 text-center">
-                        <span class="text-[8px] font-bold text-slate-500 uppercase block leading-none">Rev</span>
-                        <span id="revStat" class="text-xs font-bold text-blue-500">0</span>
+                        <span class="text-[9px] font-bold text-slate-500 uppercase block leading-none mb-1">Rev</span>
+                        <span id="revStat" class="text-xs font-black text-blue-500">0</span>
                     </div>
-                    <div class="w-[1px] h-4 bg-slate-800"></div>
+                    <div class="w-[1px] h-5 bg-slate-800"></div>
                     <div class="px-2 py-0.5 text-center">
-                        <span class="text-[8px] font-bold text-slate-500 uppercase block leading-none">Left</span>
-                        <span id="leftStat" class="text-xs font-bold text-rose-500">0</span>
+                        <span class="text-[9px] font-bold text-slate-500 uppercase block leading-none mb-1">Left</span>
+                        <span id="leftStat" class="text-xs font-black text-rose-500">0</span>
                     </div>
                 </div>
 
-                <!-- Home button   -->
                 <div>
-                    <a href="../index.html">Home</a>
+                    <a href="../index.html" class="bg-slate-900 hover:bg-slate-800 border border-slate-800 px-3 py-1.5 rounded-lg text-[11px] font-bold transition">Home</a>
                 </div>
 
-
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-1.5">
                     <div class="relative">
-                        <button onclick="toggleDropdown()" id="dropdownBtn" class="flex items-center gap-1.5 bg-slate-900 border border-slate-800 px-3 py-2 rounded-xl text-[10px] font-bold text-slate-300">
+                        <button onclick="toggleDropdown()" id="dropdownBtn" class="flex items-center gap-1 bg-slate-900 border border-slate-800 px-2.5 py-2 rounded-xl text-[10px] font-bold text-slate-300">
                             <span id="currentFilterText">All</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
                         <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-32 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl z-50 overflow-hidden">
-                            <button onclick="selectFilter('All')" class="w-full text-left px-4 py-2 text-[10px] font-bold text-slate-400 hover:bg-slate-800 hover:text-white transition-colors border-b border-slate-800/50">All</button>
-                            <button onclick="selectFilter('Done')" class="w-full text-left px-4 py-2 text-[10px] font-bold text-emerald-500 hover:bg-emerald-600 hover:text-white transition-colors border-b border-slate-800/50">Done</button>
-                            <button onclick="selectFilter('Revision')" class="w-full text-left px-4 py-2 text-[10px] font-bold text-blue-500 hover:bg-blue-600 hover:text-white transition-colors border-b border-slate-800/50">Revision</button>
-                            <button onclick="selectFilter('Left')" class="w-full text-left px-4 py-2 text-[10px] font-bold text-rose-500 hover:bg-rose-600 hover:text-white transition-colors">Left</button>
+                            <button onclick="selectFilter('All')" class="w-full text-left px-3 py-2.5 text-[11px] font-bold text-slate-400 hover:bg-slate-800 hover:text-white transition">All</button>
+                            <button onclick="selectFilter('Done')" class="w-full text-left px-3 py-2.5 text-[11px] font-bold text-emerald-500 hover:bg-emerald-600 hover:text-white transition">Done</button>
+                            <button onclick="selectFilter('Revision')" class="w-full text-left px-3 py-2.5 text-[11px] font-bold text-blue-500 hover:bg-blue-600 hover:text-white transition">Revision</button>
+                            <button onclick="selectFilter('Left')" class="w-full text-left px-3 py-2.5 text-[11px] font-bold text-rose-500 hover:bg-rose-600 hover:text-white transition">Left</button>
                         </div>
                     </div>
                     <button onclick="toggleSearch()" class="p-2 bg-slate-900 border border-slate-800 rounded-xl">
@@ -68,38 +74,28 @@
                 </div>
             </div>
             <div id="searchBox" class="hidden">
-                <input type="text" id="searchInput" onkeyup="applyView()" placeholder="Search word..." class="w-full bg-slate-950 border border-blue-500/30 rounded-xl p-2 text-xs text-white outline-none">
+                <input type="text" id="searchInput" onkeyup="applyView()" placeholder="Search word..." class="w-full bg-slate-950 border border-blue-500/30 rounded-xl p-2.5 text-sm text-white outline-none">
             </div>
         </div>
     </nav>
-    <!-- navbar ENDS here -->
 
-
-    <main class="max-w-7xl mx-auto p-4">
-        <div id="vocab-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    <main class="max-w-7xl mx-auto p-4 overflow-x-hidden">
+        <div id="vocab-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
     <script>
-    let allWords = []; // শুরুতে খালি থাকবে
+    let allWords = []; 
     let doneWords = JSON.parse(localStorage.getItem('doneWords')) || [];
     let revWords = JSON.parse(localStorage.getItem('revWords')) || [];
 
-    // JSON ফাইল থেকে ডেটা লোড করার ফাংশন
     async function loadWords() {
         try {
             const response = await fetch('words.json');
             allWords = await response.json();
-            applyView(); // ডেটা লোড হওয়ার পর ভিউ আপডেট হবে
+            applyView(); 
         } catch (error) {
             console.error("Error loading JSON:", error);
-            document.getElementById('vocab-container').innerHTML = `<p class="text-rose-500 text-center col-span-full">Error: words.json ফাইলটি খুঁজে পাওয়া যায়নি!</p>`;
         }
-    }
-
-    function updateStats() {
-        document.getElementById('doneStat').innerText = doneWords.length;
-        document.getElementById('revStat').innerText = revWords.length;
-        document.getElementById('leftStat').innerText = allWords.length - doneWords.length;
     }
 
     function toggleStatus(word, type) {
@@ -148,7 +144,7 @@
     function renderWords(data) {
         const container = document.getElementById('vocab-container');
         if (data.length === 0) {
-            container.innerHTML = `<p class="text-slate-500 text-center col-span-full py-10">No words found!</p>`;
+            container.innerHTML = `<p class="text-slate-500 text-center col-span-full py-20 font-bold">No words found!</p>`;
             updateStats();
             return;
         }
@@ -159,43 +155,60 @@
             const originalIndex = allWords.findIndex(w => w.word === item.word);
             
             return `
-            <div class="bg-[#0e121d] border-2 ${isDone ? 'completed-card' : isRev ? 'rev-active' : 'border-slate-800/60'} rounded-[1.5rem] p-5 transition-all">
-                <div class="flex justify-between items-start mb-3">
-                    <span class="text-[9px] font-mono font-bold text-slate-600">#${String(originalIndex + 1).padStart(3, '0')}</span>
-                    <div class="flex items-center gap-3">
-                        <button onclick="speak('${item.word}')" class="p-1.5 bg-slate-800 rounded-lg text-[10px] hover:bg-slate-700">🔊</button>
-                        <div class="flex items-center gap-2 bg-slate-900/50 p-1 rounded-lg border border-slate-800">
-                            <label class="flex flex-col items-center gap-0.5 cursor-pointer">
-                                <span class="text-[7px] font-bold ${isDone ? 'text-emerald-500' : 'text-slate-600'} uppercase">Done</span>
-                                <input type="checkbox" ${isDone ? 'checked' : ''} onchange="toggleStatus('${item.word}', 'done')" class="w-4 h-4 rounded-full accent-emerald-500 cursor-pointer">
+            <div class="vocab-card bg-[#0e121d] border-2 ${isDone ? 'completed-card' : isRev ? 'rev-active' : 'border-slate-800/60'} rounded-[1.8rem] p-5 md:p-6 mx-auto w-full max-w-full">
+                <div class="flex justify-between items-start mb-4 gap-2">
+                    <span class="text-[10px] font-mono font-bold text-slate-500 bg-slate-900 px-2 py-1 rounded-md shrink-0">#${String(originalIndex + 1).padStart(3, '0')}</span>
+                    <div class="flex items-center gap-2 md:gap-4 shrink-0">
+                        <button onclick="speak('${item.word}')" class="p-2 bg-slate-800 rounded-xl text-base hover:bg-slate-700 transition">🔊</button>
+                        <div class="flex items-center gap-2 bg-slate-950 p-1.5 rounded-xl border border-slate-800">
+                            <label class="flex flex-col items-center gap-1 cursor-pointer">
+                                <span class="text-[8px] font-black ${isDone ? 'text-emerald-500' : 'text-slate-600'} uppercase">Done</span>
+                                <input type="checkbox" ${isDone ? 'checked' : ''} onchange="toggleStatus('${item.word}', 'done')" class="w-4 h-4 md:w-5 md:h-5 rounded-full accent-emerald-500 cursor-pointer">
                             </label>
                             <div class="w-[1px] h-5 bg-slate-800"></div>
-                            <label class="flex flex-col items-center gap-0.5 cursor-pointer">
-                                <span class="text-[7px] font-bold ${isRev ? 'text-blue-500' : 'text-slate-600'} uppercase">Rev</span>
-                                <input type="checkbox" ${isRev ? 'checked' : ''} onchange="toggleStatus('${item.word}', 'rev')" class="w-4 h-4 rounded-full accent-blue-500 cursor-pointer">
+                            <label class="flex flex-col items-center gap-1 cursor-pointer">
+                                <span class="text-[8px] font-black ${isRev ? 'text-blue-500' : 'text-slate-600'} uppercase">Rev</span>
+                                <input type="checkbox" ${isRev ? 'checked' : ''} onchange="toggleStatus('${item.word}', 'rev')" class="w-4 h-4 md:w-5 md:h-5 rounded-full accent-blue-500 cursor-pointer">
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <h3 class="text-xl font-black text-white leading-tight">${item.word}</h3>
-                    <div class="flex items-center gap-2 mt-1">
-                        <span class="text-[11px] font-medium text-blue-400">${item.bn}</span>
-                        <span class="text-[7px] font-black uppercase bg-blue-900/20 text-blue-400 px-1.5 py-0.5 rounded border border-blue-800/30">${item.pos}</span>
+                
+                <div class="mb-4">
+                    <h3 class="text-2xl md:text-3xl font-black text-white leading-tight break-words">${item.word}</h3>
+                    <div class="flex flex-wrap items-center gap-2 mt-2">
+                        <span class="text-base md:text-lg font-bold text-blue-400">${item.bn}</span>
+                        <span class="text-[9px] font-black uppercase bg-blue-900/30 text-blue-400 px-1.5 py-0.5 rounded border border-blue-800/30">${item.pos}</span>
                     </div>
                 </div>
-                <p class="text-[11px] text-slate-400 italic my-3 border-l-2 border-slate-800 pl-2">"${item.def}"</p>
-                <div class="space-y-2 text-[10px]">
-                    <div class="bg-slate-950/40 p-2 rounded-xl border border-slate-800/40"><span class="text-[7px] font-black text-blue-500 block mb-0.5 uppercase">Past</span>${item.past}</div>
-                    <div class="bg-slate-950/40 p-2 rounded-xl border border-slate-800/40"><span class="text-[7px] font-black text-emerald-500 block mb-0.5 uppercase">Present</span>${item.present}</div>
-                    <div class="bg-slate-950/40 p-2 rounded-xl border border-slate-800/40"><span class="text-[7px] font-black text-purple-500 block mb-0.5 uppercase">Future</span>${item.future}</div>
+
+                <p class="text-[13px] md:text-[14px] text-slate-400 leading-relaxed italic my-4 border-l-4 border-indigo-500/30 pl-3">"${item.def}"</p>
+                
+                <div class="grid grid-cols-1 gap-2.5 mt-6">
+                    <div class="bg-slate-950/60 p-3 rounded-2xl border border-slate-800/50">
+                        <span class="text-[9px] font-black text-blue-500 block mb-1 uppercase tracking-widest">Past</span>
+                        <p class="text-xs md:text-sm text-slate-200 font-medium">${item.past}</p>
+                    </div>
+                    <div class="bg-slate-950/60 p-3 rounded-2xl border border-slate-800/50">
+                        <span class="text-[9px] font-black text-emerald-500 block mb-1 uppercase tracking-widest">Present</span>
+                        <p class="text-xs md:text-sm text-slate-200 font-medium">${item.present}</p>
+                    </div>
+                    <div class="bg-slate-950/60 p-3 rounded-2xl border border-slate-800/50">
+                        <span class="text-[9px] font-black text-purple-500 block mb-1 uppercase tracking-widest">Future</span>
+                        <p class="text-xs md:text-sm text-slate-200 font-medium">${item.future}</p>
+                    </div>
                 </div>
             </div>`;
         }).join('');
         updateStats();
     }
 
-    // ড্রপডাউন এবং অন্যান্য ফাংশন আগের মতোই থাকবে
+    function updateStats() {
+        document.getElementById('doneStat').innerText = doneWords.length;
+        document.getElementById('revStat').innerText = revWords.length;
+        document.getElementById('leftStat').innerText = allWords.length - doneWords.length;
+    }
+
     function selectFilter(label) {
         document.getElementById('currentFilterText').innerText = label;
         document.getElementById('dropdownMenu').classList.add('hidden');
@@ -208,15 +221,16 @@
         box.classList.toggle('hidden');
         if(!box.classList.contains('hidden')) document.getElementById('searchInput').focus();
     }
-   function speak(text) { 
-    // আগের সেই সিম্পল ভার্সন যা ব্রাউজারের সেরা ভয়েসটি বেছে নেয়
-    window.speechSynthesis.cancel(); // আগের কোনো সাউন্ড চললে তা বন্ধ করবে
-    const utterance = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(utterance); 
-}
+
+    function speak(text) { 
+        window.speechSynthesis.cancel(); 
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance); 
+    }
+
     window.onclick = function(e) { if (!e.target.closest('#dropdownBtn')) document.getElementById('dropdownMenu').classList.add('hidden'); }
 
-    // পেজ লোড হলে JSON কল করা
     loadWords();
 </script>
 </body>
